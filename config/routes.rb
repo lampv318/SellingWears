@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   get "/static_pages/:page", to: "static_pages#show"
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
+  get "categories/shirt"
+  get "categories/pant"
+  get "categories/dress"
+  get "categories/vest"
 end
