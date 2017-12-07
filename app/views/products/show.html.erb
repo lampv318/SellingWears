@@ -1,0 +1,30 @@
+<main id="product-show">
+ 
+  <!-- Left Column / Wears Image -->
+  <div class="left-column img-responsive">
+      <%= image_tag("products/XYZ-1234_Kimono_Sleeve_Shirt") %>
+  </div>
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <h1><%= @product.name %></h1>
+      <hr>
+      <ul>
+        <li>Buttoned down shirt</li>
+        <li>Short Sleeve</li>
+        <li>100% Viscose material</li>
+      </ul>
+    </div>
+ 
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span><%= @product.price %>$</span>
+    </div>
+    <div>
+      <a href="#" class="cart-btn">Add to cart</a>
+    </div>
+  </div>
+</main>
