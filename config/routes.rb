@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   get "categories/pant"
   get "categories/dress"
   get "categories/vest"
+  get "/signup", to: "user#new"
   resources :products
+  resources :users
+
 end
