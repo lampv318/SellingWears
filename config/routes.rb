@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get "categories/pant"
   get "categories/dress"
   get "categories/vest"
-  get "products/:id", to: "products#show"
+  resources :products
 end
