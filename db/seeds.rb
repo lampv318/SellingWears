@@ -45,3 +45,9 @@ Product.create! code: 'XYZ-1877',
                 category: 'dress',
                 price: 50.00,
                 img_url: 'XYZ-1877_Floral_Neck_Tie_Dress.jpg'
+
+User.create!  name: 'Admin',
+              email: 'admin@admin.com',
+              password: '1234567',
+              password_confirmation: '1234567',
+              is_admin: true
