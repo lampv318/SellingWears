@@ -44,30 +44,30 @@
   <h1>Categories</h1><br>
   <div class="row">
     <div class="col-sm-3">
-      <%= link_to image_tag("static_pages/pants.jpg"), "#" %>
+      <%= link_to image_tag("static_pages/pants.jpg"), categories_pant_path %>
     </div>
     <div class="col-sm-3">
-      <%= link_to image_tag("static_pages/shirt.jpg"), "#" %>
+      <%= link_to image_tag("static_pages/shirt.jpg"), categories_shirt_path %>
     </div>
     <div class="col-sm-3">
-      <%= link_to image_tag("static_pages/dress.jpg"), "#" %>
+      <%= link_to image_tag("static_pages/dress.jpg"), categories_dress_path %>
     </div>
     <div class="col-sm-3">
-      <%= link_to image_tag("static_pages/vest.jpg"), "#" %>
+      <%= link_to image_tag("static_pages/vest.jpg"), categories_vest_path %>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-3">
-      <a href="#"><h3>Pants</h3></a>
+     <h3><%= link_to "Pants", categories_pant_path %></h3>
     </div>
     <div class="col-sm-3">
-      <a href="#"><h3>Shirts</h3></a>
+      <h3><%= link_to "Shirts", categories_shirt_path %></h3>
     </div>
     <div class="col-sm-3">
-      <a href="#"><h3>Dresses</h3></a>
+      <h3><%= link_to "Dresses", categories_dress_path %></h3>
     </div>
     <div class="col-sm-3">
-      <a href="#"><h3>Vests</h3></a>
+      <h3><%= link_to "Vests", categories_vest_path %></h3>
     </div>
   </div>
 </div><br>
