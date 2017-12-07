@@ -71,6 +71,15 @@ p {
   }
 }
 
+.search_box{
+  width:100%;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  margin-top: 12px; 
+}
+
+
 /* footer */
 
 footer {
@@ -96,16 +105,10 @@ footer {
     }
   }
 }
-.search_box{
-  width:100%;
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-  margin-top: 12px; 
-}
+
 
 img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9; /* ie8 */
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
 }
