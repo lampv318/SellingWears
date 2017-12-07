@@ -1,1 +1,73 @@
 <% provide(:title, "Home") %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="center jumbotron">
+  <h1>Welcome to XYZ Wear Corporation Website</h1>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag("static_pages/home-page1.jpg") %>
+        <!-- <div class="carousel-caption">
+          <h3>Sell $</h3>
+          <p>Money Money.</p>
+        </div>     -->  
+      </div>
+
+      <div class="item">
+        <%= image_tag("static_pages/home-page2.jpg") %>
+        <!-- <div class="carousel-caption">
+          <h3>More Sell $</h3>
+          <p>Lorem ipsum...</p>
+        </div>    -->   
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="container text-center">    
+  <h1>Categories</h1><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <%= link_to image_tag("static_pages/pants.jpg"), "#" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to image_tag("static_pages/shirt.jpg"), "#" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to image_tag("static_pages/dress.jpg"), "#" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to image_tag("static_pages/vest.jpg"), "#" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <a href="#"><h3>Pants</h3></a>
+    </div>
+    <div class="col-sm-3">
+      <a href="#"><h3>Shirts</h3></a>
+    </div>
+    <div class="col-sm-3">
+      <a href="#"><h3>Dresses</h3></a>
+    </div>
+    <div class="col-sm-3">
+      <a href="#"><h3>Vests</h3></a>
+    </div>
+  </div>
+</div><br>
