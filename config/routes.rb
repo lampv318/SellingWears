@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   get "categories/pant"
   get "categories/dress"
   get "categories/vest"
-  get "/signup", to: "user#new"
+  get  "/signup",  to: "users#new"
+  get    "/login",   to: "sessions#new"
+  post   "/login",   to: "sessions#create"
+  delete "/logout",  to: "sessions#destroy"
   resources :products
   resources :users
-  get  '/signup',  to: 'users#new'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
-
+  
 end
