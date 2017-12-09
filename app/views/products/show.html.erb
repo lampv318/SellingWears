@@ -3,7 +3,7 @@
  
   <!-- Left Column / Wears Image -->
   <div class="left-column img-responsive">
-      <%= image_tag("products/"+@product.img_url) %>
+      <a><%= image_tag @product.picture.url if @product.picture? %></a>
   </div>
  
   <!-- Right Column -->
