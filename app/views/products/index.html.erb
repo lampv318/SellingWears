@@ -1,26 +1,22 @@
-<% provide(:title, "All Product") %>
-<main class="row">
-  <div class="col-lg-12">
-    <h3>Products</h3>
-    <hr>
-  </div>
-  <div class="col-lg-3">
-    <h3>Categories</h3>
-  </div>
-  <div class="col-lg-9 some-product">
+<% provide :title, "All Product" %>
+<div class="container">
+  <h1><center><%= link_to "Product", products_path %></center></h1>
     <% @products.each do |product| %>
-      <div class="col-lg-6">
-        <div class="product-img">
-          <%= link_to image_tag("products/"+product.img_url), product %> 
+    <li>
+      <div class="row-fluid">
+        <div class="span5">
+          <div class="picture-list">
+            <a><%= link_to product do %>
+            <%= image_tag( product.picture.url, height: Settings.height_picture_product_index) if product.picture? %>
+              <% end %>
+            </a>
+          </div>
         </div>
-        <div class="info">
-          <span class="product-name"><%= link_to product.name, product %></span>
-          <span class="product-price"><%= product.price %> $</span>
+        <div class="span7">
+          <%= render "product_row", product: product %>
         </div>
       </div>
+    </li>
+    <hr class="colorgrap">
     <% end %>
-  </div>
-  <div class="col-lg-12">
-    <!-- for pagination -->
-  </div>
-</main>
+</div>
