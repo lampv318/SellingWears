@@ -16,6 +16,8 @@ gem "mini_magick", "4.5.1"
 gem "fog", "1.38.0"
 gem 'fog-aws','2.0.0'
 gem "config"
+gem "cancancan"
+
 gem "jquery-rails", "4.3.1"
 gem "bcrypt",         "3.1.11"
 gem "sqlite3"
