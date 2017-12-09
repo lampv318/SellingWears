@@ -1,0 +1,48 @@
+<% provide :title, @product.name %>
+<div class="container">
+<div class="well well-small">
+  <div class="row-fluid">
+    <div class="span5">
+      <a><%= image_tag @product.picture.url if @product.picture? %></a>
+    </div>
+    <div class="span7">
+      <h3><%= @product.name %></h3>
+      <hr class="soft"/>
+      <form class="form-horizontal qtyFrm">
+        <div class="control-group">
+         <h2><%= number_to_currency(@product.price) %></h2>
+         <br>
+         <label class="control-label"><span><%= @product.quantity %></span></label>
+         <div class="controls">
+          <input type="number" class="span6">
+        </div>
+      </div>
+      <h4><%= @product.quantity %><%= "items_stock" %></h4>
+      <p><%= "choose_add" %></p>
+      <div class="col-xs-12 col-md-6"><%= link_to "Add to cart", "#",
+        class: "btn btn-primary btn-block btn-lg" %></div>
+      </form>
+    </div>
+  </div>
+  <hr class="softn clr"/>
+  <ul id="productDetail" class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle="tab"><%= "details" %></a></li>
+  </ul>
+  <div id="myTabContent" class="tab-content tabWrapper">
+    <div class="tab-pane fade active in" id="home">
+      <h4><%= "information" %></h4>
+      <table class="table table-striped">
+        <tbody>
+          <tr class="techSpecRow"><td class="techSpecTD1">
+            <%=  "name" %></td>
+            <td class="techSpecTD2"><%= @product.name %></td></tr>
+            <tr class="techSpecRow"><td class="techSpecTD1">
+              <%= "price" %></td>
+              <td class="techSpecTD2"><%= number_to_currency(@product.price) %></td></tr>
+            </tbody>
+        </table>
+          <p><%= @product.description %></p>
+    </div>
+      </div>
+    </div>
+</div>
