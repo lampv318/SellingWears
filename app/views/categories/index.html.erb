@@ -1,0 +1,20 @@
+<% provide :title, "All Category" %>
+<div class="container">
+  <h1><center><%= link_to "Category", categories_path %></center></h1>
+    <% @categories.each do |category| %>
+    <li>
+      <div class="row-fluid">
+        <div class="span5">
+          <div class="picture-list">
+            <a><%= link_to category do %>
+            <%= category.name %>
+              <% end %>
+            </a>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </li>
+    <hr class="colorgrap">
+    <% end %>
+</div>
