@@ -3,11 +3,13 @@ class Product < ApplicationRecord
   has_many :order_lines, dependent: :destroy
   has_many :rates, dependent: :destroy
 
+  belongs_to :category
+
   mount_uploader :picture, PictureUploader
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :price, presence: true
-  validates :category, presence: true, length: { maximum: 20 }
+  validates :category_id, presence: true
   validate  :picture_size
 
   private
