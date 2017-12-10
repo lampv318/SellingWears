@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete "/logout",  to: "sessions#destroy"
   resources :products
   resources :users
+  resources :comments, only: [:create, :destroy]
   namespace :admin do
     resources :products, except: [:edit,:update, :destroy]
   end
