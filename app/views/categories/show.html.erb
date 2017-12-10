@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="span3 well">
+    <center>
+      <h1><%= @category.name %></h2>
+      <h3><%= "id" %><%= @category.id %></h3>
+    </center>
+  </div>
+  <%= will_paginate @products %>
+  <ul>
+    <% @products.each do |product| %>
+    <div class="panel panel-white post panel-shadow">
+      <div class="post-footer">
+        <ul class="comments-list">
+          <li class="comment">
+            <div class="row-fluid">
+              <div class="span5">
+                <div class="picture-list">
+                  <a>
+                    <center>
+                      <br>
+                      <% if product.picture? %>
+                        <%= image_tag(product.picture.url,
+                          height: Settings.height_picture_product_index) %>
+                      <% end %>
+                    </center>
+                  </a>
+                </div>
+              </div>
+              <div class="span7">
+                <h3><%= link_to product.name, product %></h3>
+                <hr class="soft"/>
+                <div class="control-group">
+                  <h2><%= number_to_currency product.price %></h2>
+                  <br>
+                </div>
+                <h4><%= product.quantity %><%= "items stock" %></h4>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr class="colorgrap">
+    <% end %>
+  </ul>
+  <%= will_paginate @products %>
+</div>
