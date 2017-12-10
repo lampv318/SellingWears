@@ -1,31 +1,79 @@
-<% provide(:title, "Product") %>
-<main id="product-show">
- 
-  <!-- Left Column / Wears Image -->
-  <div class="left-column img-responsive">
-      <a><%= image_tag @product.picture.url if @product.picture? %></a>
+<% provide :title, @product.name %>
+<div class="container">
+  <div class="well well-small">
+    <div class="row-fluid">
+      <div class="span5">
+        <a><%= image_tag @product.picture.url if @product.picture? %></a>
+      </div>
+      <div class="span7">
+        <h3><%= @product.name %></h3>
+        <hr class="soft"/>
+        <form class="form-horizontal qtyFrm">
+          <div class="control-group">
+            <h2><%= number_to_currency @product.price %></h2>
+            <br>
+            <label class="control-label"><span><%= :quantity %></span></label>
+            <div class="controls">
+              <input type="number" class="span6">
+            </div>
+          </div>
+          <h4><%= @product.quantity %> <%= "Items stock" %></h4>
+          <p><%=  "Choose Add" %></p>
+          <div class="col-xs-12 col-md-6">
+            <%= link_to "Add to cart", "#",
+              class: "btn btn-primary btn-block btn-lg" %>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr class="softn clr"/>
+    <ul id="product-detail" class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab"><%= t ".details" %></a></li>
+    </ul>
+    <div id="my-tab-content" class="tab-content tabWrapper">
+      <div class="tab-pane fade active in" id="home">
+        <h4><%= t ".information" %></h4>
+        <table class="table table-striped">
+          <tbody>
+            <tr class="techSpecRow">
+              <td class="techSpecTD1"><%=  "Name" %></td>
+              <td class="techSpecTD2"><%= @product.name %></td>
+            </tr>
+            <tr class="techSpecRow">
+              <td class="techSpecTD1"><%= "Price" %></td>
+              <td class="techSpecTD2"><%= number_to_currency @product.price %></td>
+            </tr>
+            <tr class="techSpecRow">
+              <td class="techSpecTD1"><%= "Description" %></td>
+              <td class="techSpecTD2"><%= @product.description %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <% if logged_in? %>
+        <div class="row">
+          <aside class="col-md-4">
+            <section class="micropost_form">
+              <br>
+              <% @comment = @product.comments.build %>
+                <span class="comment_form">
+                <%= render "comments/comment_form" %>
+            </span>
+            </section>
+          </aside>
+        </div>
+      <% end %>
+    </div>
+     <div class="col-md-8">
+    <% if @product.comments.any? %>
+      <h3>Comment (<%= @product.comments.count %>)</h3>
+      <ol class="comments">
+        <%= render @comments %>
+      </ol>
+      <%= will_paginate @comments %>
+    <% end %>
   </div>
- 
-  <!-- Right Column -->
-  <div class="right-column">
- 
-    <!-- Product Description -->
-    <div class="product-description">
-      <h1><%= @product.name %></h1>
-      <hr>
-      <ul>
-        <li>Buttoned down shirt</li>
-        <li>Short Sleeve</li>
-        <li>100% Viscose material</li>
-      </ul>
-    </div>
- 
-    <!-- Product Pricing -->
-    <div class="product-price">
-      <span><%= @product.price %>$</span>
-    </div>
-    <div>
-      <a href="#" class="cart-btn">Add to cart</a>
-    </div>
   </div>
-</main>
+</div>

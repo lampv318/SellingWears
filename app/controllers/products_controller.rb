@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
   def show
     @product = Product.find_by(id: params[:id])
-    unless @product
-      flash[:danger] = "not_found"
+    @comments = @product.comments.paginate(page: params[:page])
+    if @product
+      @comment = @product.comments.newest.paginate page: params[:page]
+    else
+      flash[:danger] = "Not found"
       redirect_to root_path
     end
   end
