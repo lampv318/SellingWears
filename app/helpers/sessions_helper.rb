@@ -44,6 +44,10 @@ module SessionsHelper
 
   # Logs out the current user.
   def log_out
+    if current_order
+      current_order.destroy
+    end
+    session.delete :order_id
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  helper_method :current_order
   include SessionsHelper 
-
   private
 
   def require_admin
@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
       store_location
       flash[:danger] = "Please Login"
       redirect_to root_path
+    end
+  end
+
+  def current_order
+    if logged_in?
+      if session[:order_id]
+        Order.find(session[:order_id])
+      else
+        current_user.orders.new
+      end
     end
   end
 end
