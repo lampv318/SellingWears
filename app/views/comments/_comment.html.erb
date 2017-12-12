@@ -4,4 +4,8 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
+  <% if (can? :destroy, Comment) %>
+          <%= link_to "delete", comment, method: :delete,
+          data: {confirm: ".sure"} %>
+  <% end %>
 </li>

@@ -9,13 +9,13 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = "can't save"
     end
-    redirect_to root_url
+    redirect_back fallback_location: root_path
   end
 
   def destroy
     @comment.destroy
     flash[:success] =  "Delete"
-    redirect_to :back
+    redirect_back fallback_location: root_path
   end
 
   private
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   end
 
   def correct_user
-    @comment = current_user.comment.find_by id: params[:id]
-    redirect_to :back if @comment.nil?
+    @comment = current_user.comments.find_by id: params[:id]
+    redirect_back fallback_location: root_path if @comment.nil?
   end
 end
