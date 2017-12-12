@@ -4,6 +4,6 @@ class Comment < ApplicationRecord
 
   scope :newest, -> {order created_at: :desc}
 
-  # validates :user, presence: true
+  validates :user, presence: true
   validates :content, presence: true
 end
