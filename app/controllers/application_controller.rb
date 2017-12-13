@@ -23,10 +23,12 @@ class ApplicationController < ActionController::Base
   def current_order
     if logged_in?
       if session[:order_id]
-         Order.find(session[:order_id])
+        Order.find(session[:order_id])
       else
         current_user.orders.new
       end
+    else
+      redirect_to login_path
     end
   end
 end
