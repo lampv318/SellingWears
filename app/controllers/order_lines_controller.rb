@@ -3,7 +3,7 @@ class OrderLinesController < ApplicationController
 
   def create
     @order = current_order
-    @order_line = @order.order_lines.new(order_line_params)
+    @order_line = @order.order_lines.new order_line_params
     @order.save
     session[:order_id] = @order.id
   end
