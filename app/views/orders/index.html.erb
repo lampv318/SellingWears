@@ -1,0 +1,7 @@
+<% @orders.each do |order| %>
+<li>
+  <%= order.address %>
+  <%= order.subtotal %>
+  <%= order.tax %>
+</li>
+<% end %>

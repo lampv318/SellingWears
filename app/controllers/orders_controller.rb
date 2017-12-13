@@ -3,6 +3,11 @@ class OrdersController < ApplicationController
     @order = current_order
   end
 
+  def index
+    @user = current_user
+    @orders = @user.orders.paginate page: params[:page]
+  end
+
   def update
     if current_order.update_attributes order_params
       flash[:success] = "Buy Success"
