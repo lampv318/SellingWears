@@ -1,4 +1,12 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.all
+    if logged_in?
+      @order_line = current_order.order_lines.new
+    end
+  end
+
+
   def show
     @product = Product.find_by(id: params[:id])
     @comments = @product.comments.paginate(page: params[:page])
@@ -10,7 +18,4 @@ class ProductsController < ApplicationController
     end
   end
 
-  def index
-    @products = Product.all
-  end
 end
