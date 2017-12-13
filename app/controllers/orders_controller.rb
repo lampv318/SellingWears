@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def new
+    @order = current_order
+  end
+
   def update
     if current_order.update_attributes order_params
       flash[:success] = "Buy Success"
