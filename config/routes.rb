@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :users
   resources :comments, only: [:create, :destroy]
   resources :categories, only: [:index, :show]
+  resources :order_lines, only: [:create, :update, :destroy]
+  resource :cart, only: [:show]
+  resources :orders, only: [:update, :destroy]
   namespace :admin do
     resources :products, except: [:edit,:update, :destroy]
     resources :categories, except: [:edit, :update, :destroy]
