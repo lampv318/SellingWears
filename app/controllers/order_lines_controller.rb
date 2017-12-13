@@ -5,6 +5,7 @@ class OrderLinesController < ApplicationController
     @order = current_order
     @order_line = @order.order_lines.new order_line_params
     @order.save
+    flash[:success] = "Order save"  
     session[:order_id] = @order.id
   end
 
@@ -12,6 +13,7 @@ class OrderLinesController < ApplicationController
     @order = current_order
     @order_line = @order.order_lines.find_by id: params[:id]
     @order_line.update_attributes(order_line_params)
+    flash[:success] = "Order update"
     @order_lines = @order.order_lines
   end
 
@@ -19,6 +21,7 @@ class OrderLinesController < ApplicationController
     @order = current_order
     @order_line = @order.order_lines.find_by id: params[:id]
     @order_line.destroy
+    flash[:success] = "Order delete"
     @order_lines = @order.order_lines
   end
 

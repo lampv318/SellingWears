@@ -1,0 +1,24 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@order.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @order.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: 'Give us your address',
+      class: 'form-control' %>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :order_id, value: current_order.id %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

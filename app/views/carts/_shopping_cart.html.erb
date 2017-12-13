@@ -17,3 +17,16 @@
     <%= render 'carts/cart_row', product: order_line.product, order_line: order_line, show_total: true %>
   <% end %>
 <% end %>
+<div class="container">
+  <table id="cart" class="table table-hover table-condensed">
+      <tr>
+        <td><%= link_to "Continue Shopping", products_path, class: "btn btn-warning" %>
+        <td colspan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center"><strong>Total Price: <%= number_to_currency current_order.subtotal %></strong></td>
+        <td>
+          <%= link_to "Checkout", new_order_path, class: "btn btn-success btn-block" %></td>
+          <span> <i class="fa fa-angle-right"></i> </span>
+      </tr>
+    </tfoot>
+  </table>
+</div>

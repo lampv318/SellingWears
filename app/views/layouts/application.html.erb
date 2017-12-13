@@ -14,15 +14,9 @@
     <% end %>
     <%= render "layouts/header" %>
     <div class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      <div class="row">        
-        <% if logged_in? %>
-          <div class="col-xs-12 text-right">
-            <h1 class="cart-text"><%= render "layouts/cart_text" %></h1>
-          </div>
-        <% end %>
+    <div class="row">
+      <div class="col-xs-offset-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
       </div>
     </div>
     <%= yield %>
