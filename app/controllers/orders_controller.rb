@@ -8,6 +8,11 @@ class OrdersController < ApplicationController
     @orders = @user.orders.paginate page: params[:page]
   end
 
+  def show
+    @order = current_user.orders.find_by id: params[:id]
+    @order_lines = @order.order_lines
+  end
+
   def update
     if current_order.update_attributes order_params
       flash[:success] = "Buy Success"

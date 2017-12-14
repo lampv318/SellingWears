@@ -8,8 +8,11 @@ class ProductsController < ApplicationController
 
 
   def show
-    @product = Product.find_by(id: params[:id])
-    @comments = @product.comments.paginate(page: params[:page])
+    @product = Product.find_by id: params[:id]
+    @comments = @product.comments.paginate page: params[:page]
+    if logged_in?
+      @order_line = current_order.order_lines.new
+    end
     if @product
       @comment = @product.comments.newest.paginate page: params[:page]
     else

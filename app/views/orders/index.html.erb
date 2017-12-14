@@ -1,7 +1,8 @@
 <% @orders.each do |order| %>
 <li>
-  <%= order.address %>
-  <%= order.subtotal %>
-  <%= order.tax %>
+  Adress: <%= order.address %> .
+  Subtotal: <%= order.subtotal %> .
+  Tax:  <%= order.tax %> .
 </li>
+<%= link_to "Detail", order%>
 <% end %>

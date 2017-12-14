@@ -8,31 +8,32 @@
       <div class="span7">
         <h3><%= @product.name %></h3>
         <hr class="soft"/>
-        <form class="form-horizontal qtyFrm">
           <div class="control-group">
             <h2><%= number_to_currency @product.price %></h2>
             <br>
-            <label class="control-label"><span><%= :quantity %></span></label>
-            <div class="controls">
-              <input type="number" class="span6">
-            </div>
           </div>
           <h4><%= @product.quantity %> <%= "Items stock" %></h4>
           <p><%=  "Choose Add" %></p>
-          <div class="col-xs-12 col-md-6">
-            <%= link_to "Add to cart", "#",
-              class: "btn btn-primary btn-block btn-lg" %>
-          </div>
-        </form>
+          <% if logged_in? %>
+            <%= form_for @order_line, remote: true do |f| %>        
+            <div class="input-group">
+              <%= f.number_field :number, value: 1, class: "form-control", min: 1 %>
+              <div class="input-group-btn">
+                <%= f.hidden_field :product_id, value: @product.id %>
+                <%= f.submit "Add To Cart", class: "btn btn-warning" %>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
       </div>
     </div>
     <hr class="softn clr"/>
     <ul id="product-detail" class="nav nav-tabs">
-      <li class="active"><a href="#home" data-toggle="tab"><%= t ".details" %></a></li>
+      <li class="active"><a href="#home" data-toggle="tab"><%= "Details" %></a></li>
     </ul>
     <div id="my-tab-content" class="tab-content tabWrapper">
       <div class="tab-pane fade active in" id="home">
-        <h4><%= t ".information" %></h4>
+        <h4><%= "Iinformation" %></h4>
         <table class="table table-striped">
           <tbody>
             <tr class="techSpecRow">
