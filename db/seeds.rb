@@ -74,6 +74,7 @@ StateOrder.create! id: 2, name: "Placed !"
 StateOrder.create! id: 3, name: "Delivering..."
 StateOrder.create! id: 4, name: "Completed !"
 StateOrder.create! id: 5, name: "Cancelled !"
+StateOrder.create! id: 6, name: "Wait admin agree ......!"
 
 User.create!  name: 'Admin',
               email: 'admin@admin.com',
