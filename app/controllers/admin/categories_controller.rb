@@ -14,7 +14,7 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = "flash.add_done"
+      flash[:success] = "Add Done"
       redirect_to admin_categories_path
     else
       render :new
@@ -27,7 +27,7 @@ class Admin::CategoriesController < ApplicationController
       @books = @category.products.select(:id, :category_id, :name, :price,
         :quantity, :picture).paginate page: params[:page]
     else
-      flash[:danger] = t ".flash.not_found"
+      flash[:danger] = "Not Found"
       redirect_to root_path
     end
   end

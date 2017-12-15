@@ -82,6 +82,11 @@ User.create!  name: 'Admin',
               password_confirmation: '1234567',
               is_admin: true
 
+User.create!  name: 'shipper',
+              email: 'shipper@shipper.com',
+              password: '1234567',
+              password_confirmation: '1234567',
+              shipper: true
 10.times do
 Comment.create! product_id: '1',
                 user_id: '1',

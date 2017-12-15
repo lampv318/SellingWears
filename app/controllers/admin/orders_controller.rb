@@ -1,4 +1,7 @@
 class Admin::OrdersController < ApplicationController
+  before_action :logged_in_user
+  before_action :require_admin
+  
   def index
     @orders = Order.all
   end
@@ -11,10 +14,10 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = Order.find_by id: params[:id]
     if @order.update_attributes order_params
-      flash[:success] = "Accpet"
+      flash[:success] = "Accept"
       redirect_back fallback_location: root_path
     else
-      flash[:alert] = "Can't Accpet"
+      flash[:alert] = "Can't Accept"
       redirect_to root_path
     end
   end

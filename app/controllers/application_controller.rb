@@ -5,9 +5,16 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def require_shipper
+    unless current_user.shipper?
+      flash[:danger] = "You are not Shipper"
+      redirect_to root_path
+    end
+  end
+
   def require_admin
     unless current_user.is_admin?
-      flash[:danger] = "Not Admin"
+      flash[:danger] = "You are Not Admin"
       redirect_to root_path
     end
   end

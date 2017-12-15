@@ -1,5 +1,7 @@
 class Shipper::OrdersController < ApplicationController
-  
+  before_action :logged_in_user
+  before_action :require_shipper
+
   def index
     @orders = Order.all
   end
@@ -12,10 +14,10 @@ class Shipper::OrdersController < ApplicationController
   def update
     @order = Order.find_by id: params[:id]
     if @order.update_attributes order_params
-      flash[:success] = "Success ! Wait admin agree .........."
+      flash[:success] = "Success ! #{StateOrder.find(@order.state_order_id).name}!"
       redirect_back fallback_location: root_path
     else
-      flash[:alert] = "Can't send for admin"
+      flash[:alert] = "Wrong"
       redirect_to root_path
     end
   end
