@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= form_for @order do |f| %>
   <% if @order.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
@@ -16,9 +16,9 @@
     <%= f.text_field :address, placeholder: 'Give us your address',
       class: 'form-control' %>
 
+    <%= f.hidden_field :state_order_id, value: current_user.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :order_id, value: current_order.id %>
-
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
 <% end %>

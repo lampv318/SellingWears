@@ -1,8 +1,9 @@
 class Order < ApplicationRecord
   belongs_to :user
+  # belongs_to :state_order
   has_many :order_lines, dependent: :destroy
 
-  # before_create :set_order_status
+  before_create :set_state_order
   before_save :update_subtotal
   before_save :update_total
   before_save :update_tax
@@ -17,8 +18,8 @@ class Order < ApplicationRecord
 
   private
 
-  def set_order_status
-    self.order_status_id = 1
+  def set_state_order
+    self.state_order_id = 1
   end
 
   def update_subtotal
