@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     resources :categories, except: [:edit, :update, :destroy]
     resources :orders
   end
-
   namespace :shipper do
     resources :orders
   end

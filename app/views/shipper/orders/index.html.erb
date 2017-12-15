@@ -1,5 +1,20 @@
 <% @orders.each do |order| %>
   <% if order.state_order_id == 2 %>
+    <li>
+      Adress: <%= order.address %> .
+      Subtotal: <%= order.subtotal %> .
+      Tax:  <%= order.tax %> .
+      User Name: <%= User.find(order.user_id).name %>
+      Status: <%= StateOrder.find(order.state_order_id).name %>
+    </li>
+      <%= link_to "Detail", shipper_order_path(order) %> <br>
+      <%= form_for [:shipper, order] do |f|  %>
+        <%= f.hidden_field :user_id, value: order.user_id %>
+        <%= f.hidden_field :order_id, value: order.id %>
+        <%= f.hidden_field :state_order_id , value: '6' %>
+        <%= f.submit "Take this Order" %> 
+      <% end %>
+  <% elsif order.state_order_id == 6 %>
   <li>
     Adress: <%= order.address %> .
     Subtotal: <%= order.subtotal %> .
@@ -7,21 +22,19 @@
     User Name: <%= User.find(order.user_id).name %>
     Status: <%= StateOrder.find(order.state_order_id).name %>
   </li>
-    <%= link_to "Detail", shipper_order_path(order) %> <br>
-    <%= form_for [:shipper, order] do |f|  %>
-      <%= f.hidden_field :user_id, value: order.user_id %>
-      <%= f.hidden_field :order_id, value: order.id %>
-      <%= f.hidden_field :state_order_id , value: '6' %>
-      <%= f.submit "Take this Order" %> 
-    <% end %>
+  <% elsif order.state_order_id == 3 %>
+  <li>
+    Adress: <%= order.address %> .
+    Subtotal: <%= order.subtotal %> .
+    Tax:  <%= order.tax %> .
+    User Name: <%= User.find(order.user_id).name %>
+    Status: <%= StateOrder.find(order.state_order_id).name %>
+  </li>
+  <%= form_for [:shipper, order] do |f|  %>
+    <%= f.hidden_field :user_id, value: order.user_id %>
+    <%= f.hidden_field :order_id, value: order.id %>
+    <%= f.hidden_field :state_order_id , value: '4' %>
+    <%= f.submit "Deliverd ! Complete" %> 
   <% end %>
-  <% if order.state_order_id == 6 %>
-  <li>
-    Adress: <%= order.address %> .
-    Subtotal: <%= order.subtotal %> .
-    Tax:  <%= order.tax %> .
-    User Name: <%= User.find(order.user_id).name %>
-    Status: <%= StateOrder.find(order.state_order_id).name %>
-  </li>
   <% end %>
 <% end %>
