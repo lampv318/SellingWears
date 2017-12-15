@@ -3,6 +3,7 @@
   Adress: <%= order.address %> .
   Subtotal: <%= order.subtotal %> .
   Tax:  <%= order.tax %> .
+  Status: <%= StateOrder.find(order.state_order_id).name %>
 </li>
 <%= link_to "Detail", order%>
 <% end %>
