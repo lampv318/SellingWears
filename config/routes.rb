@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products, except: [:edit,:update, :destroy]
     resources :categories, except: [:edit, :update, :destroy]
+    resources :orders
   end
 
   namespace :shipper do

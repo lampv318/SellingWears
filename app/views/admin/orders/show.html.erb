@@ -1,0 +1,7 @@
+<% @order_lines.each do |order_line| %>
+  <li>
+    name: <%= order_line.product.name %> ---
+    number: <%= order_line.number %> ----
+    price: <%= order_line.price %> ----
+  </li>
+<% end %>
