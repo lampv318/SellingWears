@@ -24,15 +24,29 @@ class Admin::ProductsController < ApplicationController
   def show
     @product = Product.find_by id: params[:id]
     unless @product
-      flash[:danger] = "not_found to show"
+      flash[:danger] = "Not found to show"
       redirect_to root_path
     end
+  end
+
+  def update
+    @product = Product.find_by id: params[:id]
+    if @product.update_attributes product_params
+      flash[:success] = "Updated"
+      redirect_to admin_product_path
+    else
+      render "edit"
+    end
+  end
+
+  def edit
+    @product = Product.find_by id: params[:id]
   end
 
   private
 
   def product_params
-    params.require(:product).permit :name, :category, 
+    params.require(:product).permit :name, :category_id, 
       :price, :description, :quantity , :picture
   end
 
