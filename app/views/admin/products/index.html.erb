@@ -3,18 +3,16 @@
   <div class="row" >
     <div class="col-md-4" >
       <h1><%= Product %></h1>
-
       <%= will_paginate %>
-
       <ul>
         <% @products.each do |product| %>
           <li>
             <%= link_to product.name, root_path %> :
             <%= link_to product.quantity, root_path %>
+            <%= link_to 'Edit', edit_admin_product_path(product) %>
           </li>
         <% end %>
       </ul>
-
       <%= will_paginate %>
     </div>
   </div>
