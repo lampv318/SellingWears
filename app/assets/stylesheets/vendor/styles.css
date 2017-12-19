@@ -15540,7 +15540,7 @@ website:   	http://www.engocreative.com
   backface-visibility: hidden;
 }
 
-.product-item .product-info .actions .action.add-to-cart a {
+.product-item .product-info .actions .action.add-to-cart a{
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background: #171717 url("../images/cart-icon.png") no-repeat scroll center center;

@@ -4,10 +4,11 @@
    <div class="container">
       <ul class="items">
          <li class="item home">
-            <a href="#" title="Go to Home Page">Home</a>
+            <%= link_to "Home", root_path %>
+            <!-- <a href="#" title="Go to Home Page">Home</a> -->
          </li>
          <li class="item category">
-            <strong>Women</strong>
+            <strong>Product</strong>
          </li>
       </ul>
    </div>
@@ -42,36 +43,22 @@
             <div class="product-grid">
                <!-- product -->
 
+
+
+               <% @products.each do |product| %>
+         
+
+
+
+
+
                <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
-               </div>
-               <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item"%>
+                  <%= render "components/products/product_item", product: product%>
                </div>
                <!-- end product -->
 
             </div>
+             <% end %>  
             <!-- end product grid -->
             <!-- toolbar bottom -->
             <div class="toolbar-bottom">
