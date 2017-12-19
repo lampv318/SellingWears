@@ -1,361 +1,196 @@
-<!-- <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "XYZ Wear Corporation", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Products", products_path %></li>
-        <li><%= link_to "Categories", categories_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "My order", orders_path %></li>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-        <li>
-          <form>
-            <input type="text" class="search_box" placeholder="Search...">
-          </form>
-        </li>
-      </ul>
-    </nav>
+<header  class="site-header header-v4">
+ <!-- header main -->
+ <div class="header-main  clearfix">
+  <div class="container-full-screen">
+   <div class="container1 clearfix">
+
+    <div class=" hidden-lg hidden-md  engo-mainmenu offcanvas-fixed">
+     <div class="btn-toggle-menu  btn-nav" data-toggle="offcanvas">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+    </div>
   </div>
+
+  <!-- .logo -->
+  <div class="logo">
+    <%= image_tag("logo/logo_2.svg") %>
+  </div>
+  <!-- end .logo -->
+  <!-- nav -->
+  <div id="main-menu" class="container main-menu clearfix">
+   <ul class="main-nav clearfix">
+    <!--Home page -->
+    <li><%= link_to "Homepage", root_path %></li>
+
+    <!--Categories -->
+    <li>
+      <%= link_to "Categories", categories_path %>
+      <ul class="sub-menu">
+       <li><a href="#">Pant</a></li>
+       <li><a href="#">Vest</a></li>
+       <li><a href="#">Shirt</a></li>
+       <li><a href="#">Dress</a></li>
+     </ul>
+   </li>
+
+   <li>
+    <a href="#" title="">Blog</a>
+    <ul class="sub-menu">
+     <li><a href="blog-v4.html">Blog version 1</a></li>
+     <li><a href="blog-v3-3col.html">Blog version 2</a></li>
+     <li><a href="blog-v3-2col">Blog version 3</a></li>
+     <li><a href="blog-v2-right.html">Blog version 4</a></li>
+   </ul>
+ </li>
+
+ <li><a href="#" title="">Contact us</a></li>
+ <li><%= link_to "Log in", login_path %></li>
+ <li><%= link_to "Sign up", signup_path %></li>
+</ul>
+</div>
+<!-- end nav -->
+<!-- right header -->
+<div class="right-header">
+  <!-- cart -->
+  <div class="mini-cart clearfix off-canvas-right">
+   <div class="cart-icon off-canvas">
+    <%= image_tag("cart-icon2.png") %>
+  </div>
+  <div class="cart-label off-canvas">
+    Bag
+    <i>(3)</i>
+  </div>
+  <div class="mini-cart-content off-canvas-content">
+    <div class="clearfix top-mini-cart">
+     <div class="cart-icon cart-control">
+      <%= image_tag("assets/cart-white.png") %>
+    </div>
+    <div class="cart-label cart-control f-left">
+      Bag
+      <i>(3)</i>
+    </div>
+    <a href="#" class="close-off-canvas btn-close f-right">
+      <%= image_tag("assets/btn-close.png") %>
+    </a>
+  </div>
+  <ul class="cart_list">
+   <li class="item clearfix">
+    <a href="#" class="image pull-left">
+     <%= image_tag("minicart/mini-product2.png") %>
+   </a>
+   <div class="cart-main-content media-body">
+     <h3 class="name">
+      <a href="#">
+       Legging Cathedral                      
+     </a>
+   </h3>
+   <div class="cart-item">
+    <div class="price">
+     <span class="amount">$35.00</span>
+     <del>$75.00</del>
+   </div>
+   <span class="qty">
+     QTY: 01
+   </span>                    
+ </div>
+ <a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
+</div>
+</li>
+<li class="item clearfix">
+  <a href="#" class="image pull-left">
+   <img src="images/minicart/mini-product2.png" alt="neon_legging_legx_2">                
+ </a>
+ <div class="cart-main-content media-body">
+   <h3 class="name">
+    <a href="#">
+     Legging Cathedral                      
+   </a>
+ </h3>
+ <div class="cart-item">
+  <div class="price">
+   <span class="amount">$35.00</span>
+   <del>$75.00</del>
+ </div>
+ <span class="qty">
+   QTY: 01
+ </span>                    
+</div>
+<a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
+</div>
+</li>
+<li class="item clearfix">
+  <a href="#" class="image pull-left">
+   <img src="images/minicart/mini-product2.png" alt="neon_legging_legx_2">                
+ </a>
+ <div class="cart-main-content media-body">
+   <h3 class="name">
+    <a href="#">
+     Legging Cathedral                      
+   </a>
+ </h3>
+ <div class="cart-item">
+  <div class="price">
+   <span class="amount">$35.00</span>
+   <del>$75.00</del>
+ </div>
+ <span class="qty">
+   QTY: 01
+ </span>                    
+</div>
+<a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
+</div>
+</li>
+</ul>
+<!-- end product list -->
+<div class="total-minicart">
+ <p class="total"><strong>Subtotal:</strong> <span class="amount">$105.00</span></p>
+ <p class="buttons clearfix">
+  <a href="#" class="btn pull-left btn-minicart">View Cart</a>
+  <a href="#" class="btn btn-primary pull-right  checkout btn-minicart">Checkout</a>
+</p>
+</div>
+</div>
+</div>
+<!-- end cart -->
+
+<!-- <div class="settings">
+ <div class="btn-settings dropdown">
+  <img src="images/icons/setting.svg" alt="">
+
+</div>
+
+<div class="toplinks dropdown-content">
+
+ <div class="set links">
+   <div>
+    <i class="fa fa-unlock-alt"></i>
+    <span>Login / Register</span>
+  </div>
+  <div>
+    <i class="fa fa-user"></i>
+    <span>My Account</span>
+  </div>
+  <div>
+    <i class="fa fa-heart"></i>
+    <span>My Wishlist</span>
+  </div>
+  <div>
+    <i class="fa fa-check-circle"></i>
+    <span>Checkout</span>
+  </div>
+</div>
+</div>
+
+</div>
+-->
+
+
+
+</div>
+<!-- end right header -->
+</div>
+</div>
+</div>
+<!-- end header main -->
 </header>
- -->
-       <header  class="site-header header-v4">
-         <!-- header main -->
-         <div class="header-main  clearfix">
-            <div class="container-full-screen">
-               <div class="container1 clearfix">
-                  <!--  -->
-                  <div class=" hidden-lg hidden-md  engo-mainmenu offcanvas-fixed">
-                     <div class="btn-toggle-menu  btn-nav" data-toggle="offcanvas">
-                        <div class="one"></div>
-                        <div class="two"></div>
-                        <div class="three"></div>
-                     </div>
-                  </div>
-                  <!--  -->
-                  <!-- .logo -->
-                  <div class="logo">
-                     <a  title="Magento Commerce" href="#">
-                        <%= image_tag("logo/logo_2.svg") %>
-                     </a>
-                  </div>
-                  <!-- end .logo -->
-                  <!-- nav -->
-                  <div id="main-menu" class="container main-menu clearfix">
-                     <ul class="main-nav clearfix">
-                        <li>
-                           <a href="#" title="">Men</a>
-                        </li>
-                        <li>
-                           <a href="#" title="">Women</a>
-                           <div class="sub-menu mega-menu">
-                              <div class="mega-item">
-                                 <h3 class="menu-title">MEN’S WEAR</h3>
-                                 <ul>
-                                  <li><a href="shop.html">Shirts &amp; Tops</a></li>
-                                  <li><a href="shop.html">Dresses</a></li>
-                                  <li><a href="shop.html">Swimwear</a></li>
-                                  <li><a href="shop.html">Suite</a></li>
-                                  <li><a href="shop.html">Jeans</a></li>
-                                  <li><a href="shop.html">Shoes</a></li>
-                                  <li><a href="shop.html">Sweaters</a></li>
-                               </ul>
-                            </div>
-                            <!-- .mega-item -->
-                            <div class="mega-item">
-                              <h3 class="menu-title">WOMEN’S WEAR</h3>
-                              <ul>
-                                 <li><a href="shop.html">Party Dress</a></li>
-                                 <li><a href="shop.html">T - Shirt</a></li>
-                                 <li><a href="shop.html">Jean &amp; Trousers</a></li>
-                                 <li><a href="shop.html">Jacket &amp; Coats</a></li>
-                                 <li><a href="shop.html">Sweaters</a></li>
-                                 <li><a href="shop.html">Blouses</a></li>
-                                 <li><a href="shop.html">Sports &amp; Lifestyle</a></li>
-                              </ul>
-                           </div>
-                           <!-- .mega-item -->
-                           <div class="mega-item">
-                              <h3 class="menu-title">ACCESSORIES</h3>
-                              <ul>
-                                 <li><a href="shop.html">Leather</a></li>
-                                 <li><a href="shop.html">Sunglasses</a></li>
-                                 <li><a href="shop.html">Belts</a></li>
-                                 <li><a href="shop.html">Ring</a></li>
-                                 <li><a href="shop.html">Sweaters</a></li>
-                                 <li><a href="shop.html">Sassuawear</a></li>
-                                 <li><a href="shop.html">Bag &amp; Persess</a></li>
-                              </ul>
-                           </div>
-                           <!-- .mega-item -->
-                           <div class="mega-item image">
-                              <a href="#"> <%= image_tag("mega-menu.png") %> </a>
-                           </div>
-                           <!-- .mega-item -->
-                        </div>
-                     </li>
-                     <li><a href="#" title="">Kids</a></li>
-                     <li><a href="#" title="">Shoes</a></li>
-                     <li><a href="#" title="">Bags</a></li>
-                     <li>
-                        <a href="#" title="">Pages</a>
-                        <div class="sub-menu mega-menu mega-menu-2">
-                           <div class="mega-item">
-                              <h3 class="menu-title">Homepages</h3>
-                              <ul>
-                                 <li><a href="index.html">Home page style 1</a></li>
-                                 <li><a href="index2.html">Home page style 2</a></li>
-                                 <li><a href="index3.html">Home page style 3</a></li>
-                                 <li><a href="index4.html">Home page style 4</a></li>
-                                 <li><a href="index5.html">Home page style 5</a></li>
-                                 <li><a href="index6.html">Home page style 6</a></li>
-                                 <li><a href="index7.html">Home page style 7</a></li>
-                                 <li><a href="index8.html">Home page style 8</a></li>
-                              </ul>
-                           </div>
-                           <!-- .mega-item -->
-                           <div class="mega-item">
-                              <h3 class="menu-title">Templates</h3>
-                              <ul>
-                                 <li><a href="404.html"> Page not found</a></li>
-                                 <li><a href="about.html">About </a></li>
-                                 <li><a href="about-v2">About v2 </a></li>
-                                 <li><a href="cart.html"> Cart</a></li>
-                                 <li><a href="faq.html">faq</a></li>
-                                 <li><a href="contact.html">Contact </a></li>
-                                 <li><a href="contact-v2.html">Contact v2 </a></li>
-                                 <li><a href="login-register.html"> Login & Register</a></li>
-                                 <li><a href="menu-v1-white.html" title="">Menu v1 white</a></li>
-                                 <li><a href="menu-v2-black.html" title="">Menu v2 black</a></li>
-                                 <li><a href="menu-v2-white.html" title="">Menu v2 white</a></li>
-                                 <li><a href="menu-v3-black" title="">Menu v3 black</a></li>
-                                 <li><a href="menu-v3-white" title="">Menu v3 White</a></li>
-                              </ul>
-                           </div>
-                           <!-- .mega-item -->
-                           <div class="mega-item">
-                              <h3 class="menu-title">Shop teamplate</h3>
-                              <ul>
-                                 <li><a href="shop-grid-full-screen.html">Shop grid full screen v1</a></li>
-                                 <li><a href="shop-grid-full-screen-v2.html">Shop grid full screen v2</a></li>
-                                 <li><a href="shop-grid-full-width.html">Shop grid full width v1</a></li>
-                                 <li><a href="shop-grid-full-width-v1.html">Shop grid full width v2</a></li>
-                                 <li><a href="shop-list-right-sidebar.html">Shop list right sidebar v1</a></li>
-                                 <li><a href="shop-list-right-sidebar-v2.html">Shop list right sidebar v2</a></li>
-                                 <li><a href="shop-list-left-sidebar.html">Shop list left sidebar v1</a></li>
-                                 <li><a href="shop-list-left-sidebar-v2.html">Shop list left sidebar v2</a></li>
-                                 <li><a href="quickview.html" title="">Quick view</a></li>
-                                 <li><a href="wishlist.html" title="">Wishlist</a></li>
-                                 <li><a href="checkout.html" title="">Check out</a></li>
-                                 <li><a href="product.html" title="">Product detail</a></li>
-                                 <li><a href="product-v2.html" title="">Product detail v2</a></li>
-                                 <li><a href="odercomplete.html" title="">Oder complete</a></li>
-                              </ul>
-                           </div>
-                           <!-- .mega-item -->
-                           <div class="mega-item">
-                              <h3 class="menu-title">Shop teamplate</h3>
-                              <ul>
-                                 <li><a href="shop-grid-3col-left-sidebar.html">Shop grid 3 col LeftSidebar v1</a></li>
-                                 <li><a href="shop-grid-3col-left-sidebar-v2.html">Shop grid 3 col LeftSidebar v2</a></li>
-                                 <li><a href="shop-grid-3col-right-sidebar.html">Shop grid 3 col RightSidebar v1</a></li>
-                                 <li><a href="shop-grid-3col-right-sidebar-v2.html">Shop grid 3 col RightSidebar v2</a></li>
-                                 <li><a href="shop-grid-fullwidth.html">Shop grid Fullwidth v1</a></li>
-                                 <li><a href="shop-grid-fullwidth-v2.html">Shop grid 3 col Fullwidth v2</a></li>
-                                 <li><a href="shop-grid-2col-left-sidebar.html">Shop grid 2 col LeftSidebar v1</a></li>
-                                 <li><a href="shop-grid-2col-left-sidebar-v2.html">Shop grid 2 col LeftSidebar v2</a></li>
-                                 <li><a href="shop-grid-2col-right-sidebar.html">Shop grid 2 col RightSidebar v1</a></li>
-                                 <li><a href="shop-grid-2col-left-sidebar-v2.html">Shop grid 2 col RightSidebar v2</a></li>
-                              </ul>
-                           </div>
-                           <!-- .mega-item -->
-                        </div>
-                     </li>
-                     <li>
-                        <a href="#" title="">Blog</a>
-                        <ul class="sub-menu">
-                           <li><a href="blog-v4.html">Blog version 4</a></li>
-                           <li><a href="blog-v3-3col.html">Blog version 3 - 3 col</a></li>
-                           <li><a href="blog-v3-2col">Blog version 3 - 2 col</a></li>
-                           <li><a href="blog-v2-right.html">Blog version 2 - Right</a></li>
-                           <li><a href="blog-v2-left.html">Blog version 2 - Left</a></li>
-                           <li><a href="blog-v1-right-sidebar.html">Blog version 1 - Right Sidebar</a></li>
-                           <li><a href="blog-v1-left-sidebar.html">Blog version 1 - Left Sidebar</a></li>
-                           <li><a href="single-post-v2.html">Single Post - Left Sidebar</a></li>
-                           <li><a href="single-post-right-sidebar.html">Single Post - Right Sidebar</a></li>
-                           <li><a href="single-post">Single Post - Fullwidth</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="#" title="">Contact us</a></li>
-                  </ul>
-               </div>
-               <!-- end nav -->
-               <!-- right header -->
-               <div class="right-header">
-                  <!-- cart -->
-                  <div class="mini-cart clearfix off-canvas-right">
-                     <div class="cart-icon off-canvas">
-                        <%= image_tag("cart-icon2.png") %>
-                     </div>
-                     <div class="cart-label off-canvas">
-                        Bag
-                        <i>(3)</i>
-                     </div>
-                     <div class="mini-cart-content off-canvas-content">
-                        <div class="clearfix top-mini-cart">
-                           <div class="cart-icon cart-control">
-                              <%= image_tag("assets/cart-white.png") %>
-                           </div>
-                           <div class="cart-label cart-control f-left">
-                              Bag
-                              <i>(3)</i>
-                           </div>
-                           <a href="#" class="close-off-canvas btn-close f-right">
-                              <%= image_tag("assets/btn-close.png") %>
-                           </a>
-                        </div>
-                        <ul class="cart_list">
-                           <li class="item clearfix">
-                              <a href="#" class="image pull-left">
-                                 <%= image_tag("minicart/mini-product2.png") %>
-                              </a>
-                              <div class="cart-main-content media-body">
-                                 <h3 class="name">
-                                    <a href="#">
-                                       Legging Cathedral                      
-                                    </a>
-                                 </h3>
-                                 <div class="cart-item">
-                                    <div class="price">
-                                       <span class="amount">$35.00</span>
-                                       <del>$75.00</del>
-                                    </div>
-                                    <span class="qty">
-                                       QTY: 01
-                                    </span>                    
-                                 </div>
-                                 <a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
-                              </div>
-                           </li>
-                           <li class="item clearfix">
-                              <a href="#" class="image pull-left">
-                                 <img src="images/minicart/mini-product2.png" alt="neon_legging_legx_2">                
-                              </a>
-                              <div class="cart-main-content media-body">
-                                 <h3 class="name">
-                                    <a href="#">
-                                       Legging Cathedral                      
-                                    </a>
-                                 </h3>
-                                 <div class="cart-item">
-                                    <div class="price">
-                                       <span class="amount">$35.00</span>
-                                       <del>$75.00</del>
-                                    </div>
-                                    <span class="qty">
-                                       QTY: 01
-                                    </span>                    
-                                 </div>
-                                 <a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
-                              </div>
-                           </li>
-                           <li class="item clearfix">
-                              <a href="#" class="image pull-left">
-                                 <img src="images/minicart/mini-product2.png" alt="neon_legging_legx_2">                
-                              </a>
-                              <div class="cart-main-content media-body">
-                                 <h3 class="name">
-                                    <a href="#">
-                                       Legging Cathedral                      
-                                    </a>
-                                 </h3>
-                                 <div class="cart-item">
-                                    <div class="price">
-                                       <span class="amount">$35.00</span>
-                                       <del>$75.00</del>
-                                    </div>
-                                    <span class="qty">
-                                       QTY: 01
-                                    </span>                    
-                                 </div>
-                                 <a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
-                              </div>
-                           </li>
-                        </ul>
-                        <!-- end product list -->
-                        <div class="total-minicart">
-                           <p class="total"><strong>Subtotal:</strong> <span class="amount">$105.00</span></p>
-                           <p class="buttons clearfix">
-                              <a href="#" class="btn pull-left btn-minicart">View Cart</a>
-                              <a href="#" class="btn btn-primary pull-right  checkout btn-minicart">Checkout</a>
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- end cart -->
-                  <div class="settings">
-                     <div class="btn-settings dropdown">
-                        <img src="images/icons/setting.svg" alt="">
-                     </div>
-                     <!-- ul.toplinks -->
-                     <div class="toplinks dropdown-content">
-<!--                         <div class="set lang clearfix">
-                           <span class="title">Select Language</span>
-                           <div class="langs clearfix">
-                              <a href="#" class="active"><img src="imagesassets/lang1.png" alt=""></a>
-                              <a href="#"><img src="images/assets/lang2.png" alt=""></a>
-                              <a href="#"><img src="images/assets/lang3.png" alt=""></a>
-                              <a href="#"><img src="images/assets/lang4.png" alt=""></a>
-                           </div>
-                        </div>
-                        <div class="set currency clearfix">
-                           <span class="title">Select Currency</span>
-                           <div class="curs">
-                              <a href="#" class="active"><i class="fa fa-dollar"></i></a>
-                              <a href="#"><i class="fa fa-eur"></i></a>
-                              <a href="#"><i class="fa fa-yen"></i></a>
-                           </div>
-                        </div> -->
-                        <div class="set links">
-                           <div>
-                              <i class="fa fa-unlock-alt"></i>
-                              <span>Login / Register</span>
-                           </div>
-                           <div>
-                              <i class="fa fa-user"></i>
-                              <span>My Account</span>
-                           </div>
-                           <div>
-                              <i class="fa fa-heart"></i>
-                              <span>My Wishlist</span>
-                           </div>
-                           <div>
-                              <i class="fa fa-check-circle"></i>
-                              <span>Checkout</span>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- end ul.toplinks -->
-                  </div>
-               </div>
-               <!-- end right header -->
-            </div>
-         </div>
-      </div>
-      <!-- end header main -->
-   </header>
