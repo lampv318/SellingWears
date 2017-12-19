@@ -136,9 +136,9 @@
    <div class="col-sm-7 margin-top-254">
       <!-- product-shop -->
       <div class="product-shop">
-         <h1 class="product-name">Legging Cathedral</h1>
+         <h1 class="product-name"><%= @product.name %></h1>
          <div class="product-review">
-            <div class="ratings">
+            <!-- <div class="ratings">
                <div class="ratings">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -146,40 +146,40 @@
                   <i class="fa fa-star empty"></i>
                   <i class="fa fa-star empty"></i>
                </div>
-            </div>
+            </div> -->
          </div>
          <div class="price-box product-single-prices">
             <span class="price">
-               $ 35.00
+               $ <%= @product.price %>
             </span>
-            <span class="old-price">
+<!--             <span class="old-price">
                $ 50.00
-            </span>  
+            </span>   -->
          </div>
          <div class="product-description des">
             <p>
-               Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+               <%= @product.description %>
             </p>
          </div>
          <!-- form add to cart -->
-         <form id="AddToCartForm" enctype="multipart/form-data" method="post" action="/cart/add">
+         <div id="AddToCartForm" enctype="multipart/form-data">
             <div class="product-signle-options clearfix">
-               <div class="selector-wrapper color">
+               <!-- <div class="selector-wrapper color">
                   <label>Color :</label>
                   <select class="single-option-selector">
                      <option>- select option -</option>
                      <option value="red">Red</option>
                      <option value="blue">Blue</option>
                   </select>
-               </div>
-               <div class="selector-wrapper size">
+               </div> -->
+               <!-- <div class="selector-wrapper size">
                   <label>Size :</label>
                   <select class="single-option-selector">
                      <option>- select option -</option>
                      <option value="M">M</option>
                      <option value="L">L</option>
                   </select>
-               </div>
+               </div> -->
                <div class="selector-wrapper size">
                   <label>QTY :</label>
                   <div class="quantity">
@@ -188,18 +188,18 @@
                </div>
             </div>
             <div class="product-single-action">
-               <div class="action add-to-cart">
-                  <a href="#">
+               <div class="action add-to-cart" data-product-id="<%= @product.id %>">
+                  <a href="javascript:void(0)">
                      Add to cart
                   </a>
                </div>
-               <div class="action add-to-wishlist">
+               <!-- <div class="action add-to-wishlist">
                   <a href="#">
                      Add to wishlist
                   </a>
-               </div>
+               </div> -->
             </div>
-         </form>
+         </div>
          <!-- End form -->
          <!-- Share this -->
          <div class="sharing-box">

@@ -1,3 +1,4 @@
+<% provide :title, @product.name %>
 <main class="wrapper main-content detail ">
    <!-- breadcrumb -->
 <!--    <div class="breadcrumbs">
@@ -8,13 +9,15 @@
       <div class="container">
          <ul class="items">
             <li class="item home">
-               <a href="#" title="Go to Home Page">Home</a>
+               <a href="/" title="Go to Home Page">Home</a>
             </li>
+            <% if @product.category != nil %>
             <li class="item category">
-               <a href="#" >Women</a>
+               <a href="#" ><%= @product.category.name %></a>
             </li>
+            <% end %>
             <li class="item product-item">
-               <strong>Legging Cathedral</strong>
+               <strong><%= @product.name %></strong>
             </li>
          </ul>
       </div>
@@ -25,8 +28,18 @@
       <div class="container">
          <%= render "components/product/product_info" %>
          <%= render "components/product/product_desciption" %>
-         <%= render "components/product/product_related" %>
+         <!--  render "components/product/product_related" -->
       </div>
    </div>
    <!-- eng product single -->
 </main>
+
+<script>
+   var json = <%= @product.to_json.html_safe -%>;
+   // console.log(parseJSON(stuff));
+   // alert("<%=@product%>");
+   // json = json.replace(/&quot;/g, '"');  
+
+   // var obj = JSON && JSON.parse(json) || $.parseJSON(json);
+   console.log(json);
+</script>
