@@ -10,11 +10,13 @@
             <li class="item home">
                <a href="#" title="Go to Home Page">Home</a>
             </li>
+            <% if @product.category != nil %> 
             <li class="item category">
-               <a href="#" >Women</a>
+               <a href="#" ><%= @product.category.name %></a>
             </li>
+            <% end %>
             <li class="item product-item">
-               <strong>Legging Cathedral</strong>
+               <strong><%= @product.name %></strong>
             </li>
          </ul>
       </div>
@@ -25,8 +27,15 @@
       <div class="container">
          <%= render "components/product/product_info" %>
          <%= render "components/product/product_desciption" %>
-         <%= render "components/product/product_related" %>
+          <!-- render "components/product/product_related"  -->
+          <br><br><br>
       </div>
    </div>
    <!-- eng product single -->
 </main>
+
+<script type="text/javascript">
+   var product = <%= @product.to_json.html_safe -%>;
+
+   console.log(product);
+</script>
