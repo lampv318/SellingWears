@@ -1,3 +1,41 @@
+ <tr>
+<%= form_for order_line, remote: true do |f| %>
+    <td class="product-remove">
+      <%= link_to "Delete", order_line, 
+                  {data: {confirm: "Confirm", name: order_line.product.name}, 
+                  method: :delete, remote: true, class: "btn btn-danger"} %>
+      <a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
+    </td>
+    <td class="product-img clearfix">
+      <a href="single-product.html">
+        <img src="images/product/1.jpg" alt="">
+      </a>
+    </td>
+    <td class="product-name-ct">
+      <a href="single-product.html">
+        <%= product.name %>
+      </a>
+    </td>
+    <td class="product-price">
+      <p class="price"><%= number_to_currency order_line.price %></p>
+    </td>
+    <td>
+      <div class="quantity">
+        <%= f.number_field :number, value: order_line.number.to_i, 
+                class: "qty", min: 1 %>
+      </div>
+    </td>
+    <td>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <%= f.submit "Update Quantity", class: "btn btn-primary" %>
+    </td>
+    <td class="product-subtotal">
+      <%= number_to_currency order_line.total_price %>
+    </td>
+<% end %>
+</tr> 
+
+<!-- 
 <div class="container">
   <div class="well">
     <div class="row">
@@ -32,3 +70,5 @@
     </div>
   </div>
 </div>
+
+ -->
