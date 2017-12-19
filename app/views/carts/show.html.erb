@@ -55,17 +55,9 @@
 					</thead>
 					<tbody>
 
-
-						<% if @order_lines.size == 0 %>
-  							<p class="text-center">
-  						 		 There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
-  							</p>
-						<% else %>
- 								 <% @order_lines.each do |order_line| %>
-   							 		<%= render 'carts/cart_row', product: order_line.product, order_line: order_line, show_total: true %>
- 								 <% end %>
-						<% end %>
-
+						<div class="list-card-item">
+							<%= render 'cart_shopping' %>
+						</div>
 
 <!-- 
 						<tr>
