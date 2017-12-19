@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Dev 
+Open terminal 2
+```
+	bundle exec rake browser_sync:start
+```

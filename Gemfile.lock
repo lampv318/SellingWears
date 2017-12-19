@@ -51,6 +51,8 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (1.0.0)
       will_paginate
+    browser_sync_rails (0.1.1)
+      rails
     builder (3.2.3)
     byebug (9.1.0)
     cancancan (2.1.2)
@@ -377,6 +379,7 @@ DEPENDENCIES
   bcrypt (= 3.1.11)
   bootstrap-sass (= 3.3.7)
   bootstrap-will_paginate
+  browser_sync_rails
   byebug
   cancancan
   capybara (~> 2.13)

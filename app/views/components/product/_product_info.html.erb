@@ -1,0 +1,229 @@
+<div class="row">
+   <div class="col-sm-5">
+      <div id="owl-product-image" class="product-image">
+         <div id="owl-carousel" class="owl-carousel carousel-product margin-bottom-10">
+            <div class=" item">
+               <a class="ProductPhotoImg" href="#" >
+                  <img  src="images/product/9.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item">
+               <a class="ProductPhotoImg" href="#" >
+                  <img src="images/product/9-3.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item">
+               <a class="ProductPhotoImg" href="#" >
+                  <img src="images/product/9-2.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item">
+               <a class="ProductPhotoImg" href="#" >
+                  <img  src="images/product/9-3.jpg" alt="">
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="product-thumbnails">
+         <div id="ProductThumbs" class=" owl-carousel owl-product-thumbs margin-bottom-0">
+            <div class=" item thumbnails">
+               <a href="javascript:" class="product-single__thumbnail">
+                  <img src="images/product/9.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item thumbnails">
+               <a href="javascript:" class="product-single__thumbnail">
+                  <img src="images/product/9-3.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item thumbnails">
+               <a href="javascript:" class="product-single__thumbnail">
+                  <img src="images/product/9-2.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item thumbnails">
+               <a href="javascript:" class="product-single__thumbnail">
+                  <img src="images/product/9-3.jpg" alt="">
+               </a>
+            </div>
+            <div class=" item thumbnails">
+               <a href="javascript:" class="product-single__thumbnail">
+                  <img src="images/product/9-3.jpg" alt="">
+               </a>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript">
+         (function ($, window, document) {
+            var api_images = ["/images/product/1.jpg","/images/product/1-2.jpg"];
+
+            var slide_show = $("#owl-product-image #owl-carousel");
+            var slide_thumb = $(".owl-product-thumbs");
+
+            slide_show.owlCarousel({
+               items:1,
+               loop:true,
+               slideBy: 1,
+               dotData: true,
+               onInitialized : init_click_scroll,
+               onChanged: this_zoom,
+               onRefreshed: this_zoom                                              
+            });
+
+            slide_thumb.owlCarousel({
+               autoPlay: false,
+               items : 4,
+               nav: true,                                            
+               dots: false,
+               onInitialized : function(){
+                  slide_thumb.css("visibility","visible");
+               }
+
+            });
+            $('.owl-item', slide_thumb).not('.cloned').each(function(index) {
+               $(this).click(function(){
+                  owl_slide.to(index);
+               })
+            });
+
+            var owl_slide = slide_show.data('owlCarousel');
+
+            $('.owl-item', slide_show).not('.cloned').each(function(index) {
+               $(this).click(function(){
+                  owl_slide.to(index);
+               })
+            });
+            function init_click_scroll() {
+               slide_show.css('visibility','visible');
+               $('.owl-item', slide_show).not('.cloned').each(function(index) {
+                  $(this).click(function(){
+                     owl_slide.to(index);
+                     this_zoom();
+                  });
+               });
+            }
+            function this_zoom(){
+               var current = this._current;
+               $(slide_show).find(".owl-item").eq(current).hover(
+                  function () {
+                     setTimeout($(this).zoom(),100);
+                     $(this)
+
+                  },
+                  function () {
+                     $(this).trigger('zoom.destroy');
+
+                  }
+                  );
+
+            }
+            function build_gallery(){
+               $(".click-to-gallery").click(function(){
+                  $.prettyPhoto.open(api_images);
+               });
+
+            }
+            function cancel_gallery() {
+               $.prettyPhoto.close();
+            }
+
+
+
+
+         })(jQuery);
+      </script>                              
+   </div>
+   <div class="col-sm-7 margin-top-254">
+      <!-- product-shop -->
+      <div class="product-shop">
+         <h1 class="product-name">Legging Cathedral</h1>
+         <div class="product-review">
+            <div class="ratings">
+               <div class="ratings">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star empty"></i>
+                  <i class="fa fa-star empty"></i>
+               </div>
+            </div>
+         </div>
+         <div class="price-box product-single-prices">
+            <span class="price">
+               $ 35.00
+            </span>
+            <span class="old-price">
+               $ 50.00
+            </span>  
+         </div>
+         <div class="product-description des">
+            <p>
+               Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+            </p>
+         </div>
+         <!-- form add to cart -->
+         <form id="AddToCartForm" enctype="multipart/form-data" method="post" action="/cart/add">
+            <div class="product-signle-options clearfix">
+               <div class="selector-wrapper color">
+                  <label>Color :</label>
+                  <select class="single-option-selector">
+                     <option>- select option -</option>
+                     <option value="red">Red</option>
+                     <option value="blue">Blue</option>
+                  </select>
+               </div>
+               <div class="selector-wrapper size">
+                  <label>Size :</label>
+                  <select class="single-option-selector">
+                     <option>- select option -</option>
+                     <option value="M">M</option>
+                     <option value="L">L</option>
+                  </select>
+               </div>
+               <div class="selector-wrapper size">
+                  <label>QTY :</label>
+                  <div class="quantity">
+                     <input step="1" min="0" value="1" title="Qty" class="qty" size="4" type="number">
+                  </div>
+               </div>
+            </div>
+            <div class="product-single-action">
+               <div class="action add-to-cart">
+                  <a href="#">
+                     Add to cart
+                  </a>
+               </div>
+               <div class="action add-to-wishlist">
+                  <a href="#">
+                     Add to wishlist
+                  </a>
+               </div>
+            </div>
+         </form>
+         <!-- End form -->
+         <!-- Share this -->
+         <div class="sharing-box">
+            <h4>Share this :</h4>
+            <div class="social-sharing clearfix normal">
+               <a class="share-twitter" href="/#" target="_blank">
+                  <i class="fa fa-twitter"></i>      
+               </a>
+               <a class="share-pinterest" href="/#" target="_blank">
+                  <i class="fa fa-pinterest"></i>      
+               </a>
+               <a class="share-facebook" href="#" target="_blank">
+                  <i class="fa fa-facebook"></i>     
+               </a>
+               <a class="share-behance" href="/#" target="_blank">
+                  <i class="fa fa-behance"></i>      
+               </a>
+               <a class="share-dribbble" href="/#" target="_blank">
+                  <i class="fa  fa-dribbble"></i>      
+               </a>
+            </div>
+         </div>
+         <!-- End share this -->
+      </div>
+      <!-- end product-shop -->
+   </div>
+</div>
