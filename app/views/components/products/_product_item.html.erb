@@ -35,7 +35,7 @@
                 <%= form_for @order_line, remote: true do |f| %>        
                   <%= f.hidden_field :number, value: '1' %>
                   <%= f.hidden_field :product_id, value: product.id %>
-                  <%= f.submit " " ,id: "c",'data-toggle': "tooltip", 'data-placement': "top", 'title': 'Add to cast'%>
+                  <%= f.submit " " %>
                 <% end %>
               <% end %>
          </div>

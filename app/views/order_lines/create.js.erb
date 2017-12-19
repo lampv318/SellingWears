@@ -1,7 +1,7 @@
 <% if @order.errors.any? || @order_line.errors.any? %>
   alert(t "invalid")
 <% else %>
-  $('.cart-text').html('<%= j render "layouts/cart_text" %>')
+  $('header').html('<%= j render "layouts/header" %>')
 <% end %>
 
 // $('test-ajax').onclick(function(){
