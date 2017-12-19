@@ -1,84 +1,32 @@
-<% provide :title, @product.name %>
-<div class="container">
-  <div class="well well-small">
-    <div class="row-fluid">
-      <div class="span5">
-        <a><%= image_tag @product.picture.url if @product.picture? %></a>
+<main class="wrapper main-content detail ">
+   <!-- breadcrumb -->
+<!--    <div class="breadcrumbs">
+   </div>
+   <div class="breadcrumbs">
+   </div> -->
+   <div class="breadcrumbs" style="margin-top: 60px;">
+      <div class="container">
+         <ul class="items">
+            <li class="item home">
+               <a href="#" title="Go to Home Page">Home</a>
+            </li>
+            <li class="item category">
+               <a href="#" >Women</a>
+            </li>
+            <li class="item product-item">
+               <strong>Legging Cathedral</strong>
+            </li>
+         </ul>
       </div>
-      <div class="span7">
-        <h3><%= @product.name %></h3>
-        <hr class="soft"/>
-          <div class="control-group">
-            <h2><%= number_to_currency @product.price %></h2>
-            <br>
-          </div>
-          <h4><%= @product.quantity %> <%= "Items stock" %></h4>
-          <p><%=  "Choose Add" %></p>
-          <% if logged_in? %>
-            <%= form_for @order_line, remote: true do |f| %>        
-            <div class="input-group">
-              <%= f.number_field :number, value: 1, class: "form-control", min: 1 %>
-              <div class="input-group-btn">
-                <%= f.hidden_field :product_id, value: @product.id %>
-                <%= f.submit "Add To Cart", class: "btn btn-warning" %>
-              </div>
-            </div>
-        <% end %>
-      <% end %>
+   </div>
+   <!-- End breadcrumbs -->
+   <!-- product single -->
+   <div class="product-single">
+      <div class="container">
+         <%= render "components/product/product_info" %>
+         <%= render "components/product/product_desciption" %>
+         <%= render "components/product/product_related" %>
       </div>
-    </div>
-    <hr class="softn clr"/>
-    <ul id="product-detail" class="nav nav-tabs">
-      <li class="active"><a href="#home" data-toggle="tab"><%= "Details" %></a></li>
-    </ul>
-    <div id="my-tab-content" class="tab-content tabWrapper">
-      <div class="tab-pane fade active in" id="home">
-        <h4><%= "Iinformation" %></h4>
-        <table class="table table-striped">
-          <tbody>
-            <tr class="techSpecRow">
-              <td class="techSpecTD1"><%=  "Name" %></td>
-              <td class="techSpecTD2"><%= @product.name %></td>
-            </tr>
-            <tr class="techSpecRow">
-              <td class="techSpecTD1"><%= "Price" %></td>
-              <td class="techSpecTD2"><%= number_to_currency @product.price %></td>
-            </tr>
-            <tr class="techSpecRow">
-              <td class="techSpecTD1"><%= "Description" %></td>
-              <td class="techSpecTD2"><%= @product.description %></td>
-            </tr>
-            <tr class="techSpecRow">
-              <td class="techSpecTD1"><%= "Category" %></td>
-              <td class="techSpecTD2"><%= @product.category.name %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <% if logged_in? %>
-        <div class="row">
-          <aside class="col-md-4">
-            <section class="micropost_form">
-              <br>
-              <% @comment = @product.comments.build %>
-                <span class="comment_form">
-                <%= render "comments/comment_form" %>
-            </span>
-            </section>
-          </aside>
-        </div>
-      <% end %>
-    </div>
-     <div class="col-md-8">
-    <% if @product.comments.any? %>
-      <h3>Comment (<%= @product.comments.count %>)</h3>
-      <ol class="comments">
-        <%= render @comments %>
-      </ol>
-      <%= will_paginate @comments %>
-    <% end %>
-  </div>
-  </div>
-</div>
+   </div>
+   <!-- eng product single -->
+</main>

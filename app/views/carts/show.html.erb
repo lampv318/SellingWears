@@ -1,3 +1,224 @@
-<div class="shopping-cart">
-  <%= render "shopping_cart" %>
-</div>
+<main class="wrapper main-content detail">
+	<!-- breadcrumb -->
+	<div class="breadcrumbs" style="margin-top: 60px;">
+		<div class="container">
+			<ul class="items">
+				<li class="item home">
+					<a href="#" title="Go to Home Page">Home</a>
+				</li>
+				<li class="item cart">
+					<a href="#" >Shopping Cart</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+	<!-- End breadcrumbs -->
+
+	<!-- Container -->
+	<div class="container">
+		<!-- shop step -->
+		<div class="shop-step">
+			<div class="container">
+				<ul class="clearfix">
+					<li class="checked">
+						<span class="count">01</span>
+						<span class="label">Shopping cart</span>
+					</li>
+					<li>
+						<span class="count">02</span>
+						<span class="label">Check out</span>
+					</li>
+					<li>
+						<span class="count">03</span>
+						<span class="label">Order Complete</span>
+					</li>
+				</ul>
+			</div>
+			<!-- .container -->
+		</div>
+		<!-- .shop-step -->
+
+		<!-- Form cart -->
+		<form class="cart-form" action="#">
+			<div class="table-responsive">
+				<table class="table cart-table">
+					<thead>
+						<tr>
+							<th></th>
+							<th class="product-name title">Product</th>
+							<th ></th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="product-remove">
+								<a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
+							</td>
+							<td class="product-img clearfix">
+								<a href="single-product.html">
+									<img src="images/product/1.jpg" alt="">
+								</a>
+							</td>
+							<td class="product-name-ct">
+								<a href="single-product.html">
+									Legging Cathedral
+								</a>
+							</td>
+							<td class="product-price">
+								<p class="price">$35.00</p>
+							</td>
+							<td>
+								<div class="quantity">
+									<input type="number" step="1" min="0" value="1" title="Qty" class="qty" size="4">
+								</div>
+							</td>
+							<td class="product-subtotal">
+								<p class="price">$35.00</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="product-remove">
+								<a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
+							</td>
+							<td class="product-img clearfix">
+								<a href="single-product.html">
+									<img src="images/product/2.jpg" alt="">
+								</a>
+							</td>
+							<td class="product-name-ct">
+								<a href="single-product.html">
+									Legging Cathedral
+								</a>
+							</td>
+							<td class="product-price">
+								<p class="price">$35.00</p>
+							</td>
+							<td>
+								<div class="quantity">
+									<input type="number" step="1" min="0" value="1" title="Qty" class="qty" size="4">
+								</div>
+							</td>
+							<td class="product-subtotal">
+								<p class="price">$35.00</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="product-remove">
+								<a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
+							</td>
+							<td class="product-img clearfix">
+								<a href="single-product.html">
+									<img src="images/product/3.jpg" alt="">
+
+								</a>
+							</td>
+							<td class="product-name-ct">
+								<a href="single-product.html">
+									Legging Cathedral
+								</a>
+							</td>
+							<td class="product-price">
+								<p class="price">$35.00</p>
+							</td>
+							<td>
+								<div class="quantity">
+									<input type="number" step="1" min="0" value="1" title="Qty" class="qty" size="4">
+								</div>
+							</td>
+							<td class="product-subtotal">
+								<p class="price">$35.00</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6" class="actions" style="padding:30px 0;">
+								<div class="clearfix cart-button-group">
+									<div class="coupon coupon-form col-lg-6 col-sm-6 col-xs-9">
+										<label for="coupon_code">Coupon:</label>
+										<div class="coupon-input-text col-lg-8 col-sm-6 col-xs-7">
+											<input type="text" name="coupon_code" class="input-text " id="coupon_code" value="" placeholder="Coupon code">
+										</div>
+										<div class="coupon-submit-btn col-lg-4 col-sm-6 col-xs-5">
+											<input type="submit" class="btn btn-primary-border" name="apply_coupon" value="Apply Coupon">
+										</div>
+									</div>
+									<div class="update-cart-btn col-lg-6 col-sm-6 col-xs-3">
+										<input type="submit" class="btn btn-primary" name="update_cart" value="Update Cart">
+										<input type="hidden" id="_wpnonce" name="_wpnonce" value="a1929e2c41"><input type="hidden" name="_wp_http_referer" value="/demo/cart/">               
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+		<!-- end form cart -->
+
+
+		<div class="cart-collaterals row">
+			<div class="col-md-6">
+				<div class="cal-shipping">
+					<h3>Calculate Shipping</h3>
+					<form action="#">
+						<div class="selectbox cart-input">
+							<select name="country">
+								<option value="vietnam">Vietnam</option>
+								<option value="us">US</option>
+								<option value="uk">UK</option>
+							</select>
+						</div>
+						<div class="selectbox cart-input">
+							<select name="country">
+								<option value="vietnam">State / Country</option>
+							</select>
+						</div>
+						<div class="input-text cart-input">
+							<input type="text" placeholder="Post Code / Zip">
+						</div>
+						<div class="input-submit">
+							<input type="submit" value="Update total">
+						</div>
+					</form>
+				</div>
+				<!-- .cal-shipping -->
+			</div>
+			<div class="col-md-6">
+				<div class="cal-shipping">
+					<h3>Cart totals</h3>
+					<table>
+						<tr class="cart-subtotal">
+							<th>Subtotals:</th>
+							<td><strong><span class="amount">$105.00</span></strong></td>
+						</tr>
+						<tr class="shipping">
+							<th>Shipping:</th>
+							<td>Free Shipping</td>
+						</tr>
+						<tr class="order-total">
+							<th>
+								<div class="black-bg">Order Totals :</div>
+							</th>
+							<td>
+								<div class="black-bg"><strong><span class="amount">$105.00</span></strong></div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- .cal-shipping -->
+			</div>
+		</div>
+		<!-- .cart-collaterals -->
+		<div class="cart-actions clearfix">
+			<form action="#">
+				<a class="button pull-right" href="checkout.html">PROCESS TO CHECK OUT</a>
+			</form>
+		</div>
+		<!-- .cart-actions -->
+	</div>
+	<!-- end container -->
+
+</main>
