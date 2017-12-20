@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.paginate page: params[:page]
     if logged_in?
       @order_line = current_order.order_lines.new
     end
