@@ -44,23 +44,18 @@
                <!-- product -->
 
 
-
-               <% @products.each do |product| %>
-         
-
-
-
-
+               <% @products.limit(9).each do |product| %>
 
                <div class="col-xs-12 col-sm-4">
                   <%= render "components/products/product_item", product: product%>
                </div>
                <!-- end product -->
+               <% end %>  
 
             </div>
-             <% end %>  
             <!-- end product grid -->
             <!-- toolbar bottom -->
+            <div class="clearfix"></div>
             <div class="toolbar-bottom">
                <div class="pagination">
                   <ul>

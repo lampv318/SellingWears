@@ -45,15 +45,19 @@
  </li>
 
  <li><a href="#" title="">Contact us</a></li>
+ <%  if logged_in? %>
+ <li><%= link_to "My accout", login_path %></li>
+ <% else %>
  <li><%= link_to "Log in", login_path %></li>
  <li><%= link_to "Sign up", signup_path %></li>
+ <% end %>
 </ul>
 </div>
 <!-- end nav -->
 <!-- right header -->
 <div class="right-header">
   <!-- cart -->
-<% if  logged_in? %>
+  <% if  logged_in? %>
   <div class="mini-cart clearfix off-canvas-right">
    <div class="cart-icon off-canvas">
     <%= link_to image_tag("cart-icon2.png") , cart_path %>
@@ -62,7 +66,7 @@
     <%= link_to "Bag", cart_path %>
     <i>(<%= current_order.order_lines.size %>)</i>
   </div>
-<% end %>
+  <% end %>
   <!-- <div class="mini-cart-content off-canvas-content">
     <div class="clearfix top-mini-cart">
      <div class="cart-icon cart-control">
