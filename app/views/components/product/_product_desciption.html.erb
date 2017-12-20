@@ -2,12 +2,10 @@
    <ul class="tabs clearfix">
       <li><a class="active" href="#tab-description">Description</a></li>
       <li><a href="#tab-reviews" class="">Reviews</a></li>
-      <li><a href="#tab-add_tags" class="">Add Tags</a></li>
+      <!-- <li><a href="#tab-add_tags" class="">Add Tags</a></li> -->
    </ul>
    <div style="display: block;" id="tab-description" class="tab-content tab-description">
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+      <%= @product.description %>
    </div>
    <!-- tab-review -->
    <div id="tab-reviews" class="tab-content tab-reviews">
@@ -16,12 +14,12 @@
             <div class="col-sm-7">
                <div id="comments">
                   <ul class="commentlist">
-                     <!-- comment -->
+
                      <li class="comment">
                         <div class="comment_container">
                            <img class="avatar" alt="" src="images/author-1.png">
                            <div class="comment-info">
-                              <h4 class="name">MICHAEL VANCE</h4>
+                              <h4 class="name">Hung</h4>
                               <span class="ratings">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
@@ -29,54 +27,14 @@
                                  <i class="fa fa-star empty"></i>
                                  <i class="fa fa-star empty"></i>
                               </span>
-                              <span class="date">03 MINS AGO</span>
+                              <span class="date">A few hours ago</span>
                               <div class="description">
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                 <p>Good product (y)</p>
                               </div>
                            </div>
                         </div>
                      </li>
-                     <!-- comment -->
-                     <li class="comment">
-                        <div class="comment_container">
-                           <img class="avatar" alt="" src="images/author-2.png">
-                           <div class="comment-info">
-                              <h4 class="name">ROCKY</h4>
-                              <span class="ratings">
-                                 <i class="fa fa-star"></i>
-                                 <i class="fa fa-star"></i>
-                                 <i class="fa fa-star"></i>
-                                 <i class="fa fa-star empty"></i>
-                                 <i class="fa fa-star empty"></i>
-                              </span>
-                              <span class="date">03 MINS AGO</span>
-                              <div class="description">
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <!-- comment -->
-                     <li class="comment">
-                        <div class="comment_container">
-                           <img class="avatar" alt="" src="images/author-3.png">
-                           <div class="comment-info">
-                              <h4 class="name">PHILIP</h4>
-                              <span class="ratings">
-                                 <i class="fa fa-star"></i>
-                                 <i class="fa fa-star"></i>
-                                 <i class="fa fa-star"></i>
-                                 <i class="fa fa-star empty"></i>
-                                 <i class="fa fa-star empty"></i>
-                              </span>
-                              <span class="date">03 MINS AGO</span>
-                              <div class="description">
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <!-- #comment-## -->
+
                   </ul>
                </div>
             </div>
@@ -97,13 +55,13 @@
                               <textarea aria-required="true" rows="3" cols="45" placeholder="Message *" name="comment" id="comment"></textarea>
                            </p>
                            <p class="form-submit">
-                              <span class="ratings">
+                             <!--  <span class="ratings">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star empty"></i>
                                  <i class="fa fa-star empty"></i>
-                              </span>
+                              </span> -->
                               <input value="ADD REVIEW" class="button" id="submit" name="submit" type="submit">
                            </p>
                         </form>
@@ -117,12 +75,12 @@
    </div>
    <!-- end tab review -->
    <!-- tab tags -->
-   <div id="tab-add_tags" class="tab-content tab-add-tags">
+<!--    <div id="tab-add_tags" class="tab-content tab-add-tags">
       <p>Add your Tags</p>
       <div class="row">
          <div class="col-sm-6"><input type="text" class="add-tag" placeholder="Add your tag"></div>
          <div class="col-sm-6"><button class="button add-tag-btn" value="Add tags">Add tags</button></div>
       </div>
-   </div>
+   </div> -->
    <!-- end tab tags -->
 </div>

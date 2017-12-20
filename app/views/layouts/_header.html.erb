@@ -45,23 +45,29 @@
  </li>
 
  <li><a href="#" title="">Contact us</a></li>
+ <%  if logged_in? %>
+ <li><%= link_to "My accout", login_path %></li>
+ <% else %>
  <li><%= link_to "Log in", login_path %></li>
  <li><%= link_to "Sign up", signup_path %></li>
+ <% end %>
 </ul>
 </div>
 <!-- end nav -->
 <!-- right header -->
 <div class="right-header">
   <!-- cart -->
+  <% if  logged_in? %>
   <div class="mini-cart clearfix off-canvas-right">
    <div class="cart-icon off-canvas">
-    <%= image_tag("cart-icon2.png") %>
+    <%= link_to image_tag("cart-icon2.png") , cart_path %>
   </div>
-  <div class="cart-label off-canvas">
-    Bag
-    <i>(3)</i>
+  <div class="cart-label off-canvas ">
+    <%= link_to "Bag", cart_path %>
+    <i>(<%= current_order.order_lines.size %>)</i>
   </div>
-  <div class="mini-cart-content off-canvas-content">
+  <% end %>
+  <!-- <div class="mini-cart-content off-canvas-content">
     <div class="clearfix top-mini-cart">
      <div class="cart-icon cart-control">
       <%= image_tag("assets/cart-white.png") %>
@@ -73,8 +79,8 @@
     <a href="#" class="close-off-canvas btn-close f-right">
       <%= image_tag("assets/btn-close.png") %>
     </a>
-  </div>
-  <ul class="cart_list">
+  </div> -->
+ <!--  <ul class="cart_list">
    <li class="item clearfix">
     <a href="#" class="image pull-left">
      <%= image_tag("minicart/mini-product2.png") %>
@@ -141,9 +147,9 @@
 <a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
 </div>
 </li>
-</ul>
+</ul> -->
 <!-- end product list -->
-<div class="total-minicart">
+<!-- <div class="total-minicart">
  <p class="total"><strong>Subtotal:</strong> <span class="amount">$105.00</span></p>
  <p class="buttons clearfix">
   <a href="#" class="btn pull-left btn-minicart">View Cart</a>
@@ -151,7 +157,7 @@
 </p>
 </div>
 </div>
-</div>
+</div> -->
 <!-- end cart -->
 
 <!-- <div class="settings">

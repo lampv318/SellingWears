@@ -24,6 +24,21 @@ Things you may want to cover:
 * ...
 
 
+RUN 
+
+duplicate file: 
+	database.yml
+	secrets.yml
+
+Terminal 1
+```
+	bundle
+	rails db:migrate
+	rails db:seed
+	rails s
+```
+
+
 Dev 
 Open terminal 2
 ```
