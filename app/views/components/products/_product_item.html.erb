@@ -2,11 +2,11 @@
 <div class="product-item wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0ms">
    <div class="product-img">
       <a href="#" class="image-hover">
-        <div class="product-img product-image-photo">
-         <%= image_tag( product.picture.url, height: Settings.height_picture_product_index) if product.picture? %>
-         <img src="images/product/9.jpg" alt="" class="product-image-photo">
-        </div>
-        <!--  <img src="images/product/9.jpg" alt="" class="product-image-photo">
+         <div class="product-img product-image-photo">
+             <!-- image_tag( product.picture.url, height: Settings.height_picture_product_index) if product.picture?  -->
+            <img src="images/collections/<%= product.category.name %>/<%= product.id %>.jpg" alt="" class="product-image-photo">
+         </div>
+         <!--  <img src="images/product/9.jpg" alt="" class="product-image-photo">
          <img src="images/product/9-2.jpg" alt="" class="product-image-photo"> -->
       </a>
    </div>
@@ -21,7 +21,7 @@
          </div>
       </div>
       <div class="product-name">
-        <%= link_to product.name ,product %></h4>
+         <%= link_to product.name ,product %></h4>
       </div>
       <div class="price-box price-final_price">
          <span class="price">
@@ -31,13 +31,13 @@
       <!-- actions -->
       <div class="actions">
          <div class="action add-to-cart">
-              <% if logged_in? %>
-                <%= form_for @order_line, remote: true do |f| %>        
-                  <%= f.hidden_field :number, value: '1' %>
-                  <%= f.hidden_field :product_id, value: product.id %>
-                  <%= f.submit " " %>
-                <% end %>
-              <% end %>
+            <% if logged_in? %>
+            <%= form_for @order_line, remote: true do |f| %>        
+            <%= f.hidden_field :number, value: '1' %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit " " %>
+            <% end %>
+            <% end %>
          </div>
          <div class="action add-to-wishlist">
             <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
@@ -51,5 +51,5 @@
       <!-- end actions -->
    </div>
 </div>
-</div>
-               <!-- end product -->
+<!-- </div> -->
+<!-- end product -->

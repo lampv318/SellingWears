@@ -42,7 +42,7 @@
 		<!-- Form cart -->
 		<form class="cart-form" action="#">
 			<div class="table-responsive">
-				<table class="table cart-table">
+				<table class="table cart-table list-card-item">
 					<thead>
 						<tr>
 							<th></th>
@@ -55,63 +55,29 @@
 					</thead>
 					<tbody>
 
-						<div class="list-card-item">
-							<%= render 'cart_shopping' %>
-						</div>
+						<%= render 'cart_shopping' %>
 
-<!-- 
-						<tr>
-							<td class="product-remove">
-								<a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
-							</td>
-							<td class="product-img clearfix">
-								<a href="single-product.html">
-									<img src="images/product/1.jpg" alt="">
-								</a>
-							</td>
-							<td class="product-name-ct">
-								<a href="single-product.html">
-									Legging Cathedral
-								</a>
-							</td>
-							<td class="product-price">
-								<p class="price">$35.00</p>
-							</td>
-							<td>
-								<div class="quantity">
-									<input type="number" step="1" min="0" value="1" title="Qty" class="qty" size="4">
-								</div>
-							</td>
-							<td class="product-subtotal">
-								<p class="price">$35.00</p>
-							</td>
-						</tr> -->
-						
-
-
-
-					
-						<tr>
-							<td colspan="6" class="actions" style="padding:30px 0;">
-								<div class="clearfix cart-button-group">
-									<div class="coupon coupon-form col-lg-6 col-sm-6 col-xs-9">
-										<label for="coupon_code">Coupon:</label>
-										<div class="coupon-input-text col-lg-8 col-sm-6 col-xs-7">
-											<input type="text" name="coupon_code" class="input-text " id="coupon_code" value="" placeholder="Coupon code">
-										</div>
-										<div class="coupon-submit-btn col-lg-4 col-sm-6 col-xs-5">
-											<input type="submit" class="btn btn-primary-border" name="apply_coupon" value="Apply Coupon">
-										</div>
-									</div>
-									<div class="update-cart-btn col-lg-6 col-sm-6 col-xs-3">
-										<input type="submit" class="btn btn-primary" name="update_cart" value="Update Cart">
-										<input type="hidden" id="_wpnonce" name="_wpnonce" value="a1929e2c41"><input type="hidden" name="_wp_http_referer" value="/demo/cart/">               
-									</div>
-								</div>
-							</td>
-						</tr>
 					</tbody>
 				</table>
+				<tr>
+   <td colspan="6" class="actions" style="padding:30px 0;">
+      <div class="clearfix cart-button-group">
+         <div class="coupon coupon-form col-lg-6 col-sm-6 col-xs-9">
+            <label for="coupon_code">Coupon:</label>
+            <div class="coupon-input-text col-lg-8 col-sm-6 col-xs-7">
+               <input type="text" name="coupon_code" class="input-text " id="coupon_code" value="" placeholder="Coupon code">
+            </div>
+            <div class="coupon-submit-btn col-lg-4 col-sm-6 col-xs-5">
+               <input type="submit" class="btn btn-primary-border" name="apply_coupon" value="Apply Coupon">
+            </div>
+         </div>
+         <div class="update-cart-btn col-lg-6 col-sm-6 col-xs-3">
+            <input type="submit" class="btn btn-primary" name="update_cart" value="Update Cart">
+            <input type="hidden" id="_wpnonce" name="_wpnonce" value="a1929e2c41"><input type="hidden" name="_wp_http_referer" value="/demo/cart/">               
+         </div>
+      </div>
+   </td>
+</tr>
 			</div>
 		</form>
 		<!-- end form cart -->
@@ -173,7 +139,7 @@
 		<div class="cart-actions clearfix">
 			<form action="#">
 				<!-- <a class="button pull-right" href="checkout.html">PROCESS TO CHECK OUT</a> -->
-				  <%= link_to "Checkout", new_order_path, class: "btn btn-success btn-primary" %></td>
+				<%= link_to "Checkout", new_order_path, class: "btn btn-success btn-primary" %></td>
 			</form>
 		</div>
 		<!-- .cart-actions -->
