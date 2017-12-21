@@ -1,10 +1,10 @@
 <!-- product -->
 <div class="product-item wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0ms">
    <div class="product-img">
-      <a href="#" class="image-hover">
+      <a href="/products/<%= product.id %>" class="image-hover">
          <div class="product-img product-image-photo">
-             <img src="images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
-             <img src="images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
+            <img src="/images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
+            <img src="/images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
          </div>
       </a>
    </div>
@@ -19,7 +19,7 @@
          </div>
       </div>
       <div class="product-name">
-         <%= link_to product.name ,product %></h4>
+         <h4><%= link_to product.name ,product %></h4>
       </div>
       <div class="price-box price-final_price">
          <span class="price">
@@ -28,21 +28,22 @@
       </div>
       <!-- actions -->
       <div class="actions">
-         <div class="action add-to-cart">
             <% if logged_in? %>
-            <%= form_for @order_line, remote: true do |f| %>        
-            <%= f.hidden_field :number, value: '1' %>
-            <%= f.hidden_field :product_id, value: product.id %>
-            <%= f.submit " " %>
+               <div class="action btn-quick-add-to-cart add-to-cart" data-product-id="<%= product.id %>">
+                  <a href="javascript:void(0)"  data-toggle="tooltip" data-placement="top" title="Add to cart">
+                  </a>
+               </div>
+            <% else %>
+               <div class="action add-to-cart">
+               <%= link_to "", login_path, "data-toggle" => "tooltip", "data-placement"=>"top", "title"=>"Login to buy" %>
+               </div>
             <% end %>
-            <% end %>
-         </div>
          <div class="action add-to-wishlist">
-            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
             </a>
          </div>
          <div class="action add-to-quickview">
-            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to quickview">
+            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to quickview">
             </a>
          </div>
       </div>

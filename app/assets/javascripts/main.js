@@ -1,41 +1,74 @@
+// import AliExpress from ‘aliexpress’
+
 $(function(){
 
 	$('.text-ajax').click(function(){
 		console.log("obj");
 	});
+	// AliExpress.BestSelling.get().then(function(goods){
+	// 	console.log('Best Selling items:');
 
-	$('.action.add-to-cart').click(function(){
+	// 	console.log(goods);
+	// });
+
+	$('.btn-quick-add-to-cart').click(function() {
 		var productId = $(this).data('product-id');
-		var quantity  = $("#AddToCartForm .qty").val();
+		var quantity = 1;
 
-		console.log(productId);
-	});	
+		doAjaxAddToCart(productId, quantity);
+	})
 
-	$('.action.add-to-cart').click(function() {
+	$('.btn-add-to-cart').click(function() {
 		var productId = $(this).data('product-id');
-		var quantity = $('#AddToCartForm .quantity .qty').val();
-		
+		var quantity = $("#AddToCartForm .qty").val();
+
+		doAjaxAddToCart(productId, quantity);
+	})
+
+	var doAjaxAddToCart = function(productId, quantity) {
 		$.ajax({
 			type: "POST",
-			url: "/order_line",
-			data: 'number=' + quantity + "&product_id=" + productId,
-			dataType: 'json',
+			url: "/order_lines",
+			data: 'order_line[number]=' + quantity + "&order_line[product_id]=" + productId,
 			beforeSend: function() {
-				// ShowLoading();
+				showLoading();
 			},
 			success: function(msg) {
-				HideLoading();
-				$('.canvas-menu-toggle.sn-back-to-top i').animate({fontSize: '160%'},400).animate({fontSize: '100%'},500);
-				resetCart(showCart);
+				hideLoading();
+				successAddToCart();
 			},
 			error: function(xhr, text) {
 				if(text == 'error' && xhr.responseJSON.status == 422){
-					AlertError(xhr.responseJSON.description);
+					showError(xhr.responseJSON.description);
 				}else{
-					AlertError("");
+					showError("");
 				}
 			}
 		});
+	}
+
+	var successAddToCart = function() {
+		showSuccess('Success Add to Cart!');
+	}
+
+	var showSuccess = function(text) {
+		// $('#alert-success').iziModal('setSubtitle', subTitle);
+		$('#alert-success .text').html(text);
+		$('#alert-success').show();
+	}
+	var showError = function(text) {
+		console.error(text);
+	}
+
+	var showLoading = function() {
+		$('#item-loading-v1').show();
+	}
+	var hideLoading = function() {
+		$('#item-loading-v1').hide();
+	}   
+
+	$('#alert-success .close, #alert-error .close').click(function(){
+		$('#alert-success, #alert-error').hide();
 	})
 
 });

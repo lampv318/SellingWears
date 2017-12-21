@@ -1,6 +1,4 @@
 <div class="breadcrumbs ">
-</div>
-<div class="breadcrumbs ">
    <div class="container">
       <ul class="items">
          <li class="item home">
@@ -8,13 +6,13 @@
             <!-- <a href="#" title="Go to Home Page">Home</a> -->
          </li>
          <li class="item category">
-            <strong>Product</strong>
+            <strong>Products</strong>
          </li>
       </ul>
    </div>
 </div>
 <!-- End breadcrumbs -->
-<main id="maincontent" class="page-main">
+<main id="maincontent" class="page-main products-page">
    <div class="container">
       <div class="columns">
          <!-- Col main -->
@@ -34,29 +32,28 @@
                      </div>
                   </form>
                   <div class="style-switch pull-right">                               
-                     <a class="active"  href="#" data-view="grid"><i class="fa fa-th"></i></a>
-                     <a href="#" data-view="list"><i class="fa fa-th-list"></i></a>
+                     <!-- <a class="active"  href="#" data-view="grid"><i class="fa fa-th"></i></a>
+                     <a href="#" data-view="list"><i class="fa fa-th-list"></i></a> -->
                   </div>
                </div>
                <!-- .sort -->
             </div>
-            <div class="product-grid">
-               <!-- product -->
-               <% @products.each do |product| %>
+
+            <div class="product-grid grid--uniform ">
+               <% @products.limit(9).each do |product| %>
                   <div class="col-xs-12 col-sm-4">
                      <%= render "components/products/product_item", product: product%>
                   </div>
-               <!-- end product -->
                <% end %>  
-              <%= will_paginate %>
-
             </div>
             <!-- end product grid -->
             <!-- toolbar bottom -->
-        <!--     <div class="clearfix"></div>
-            <div class="toolbar-bottom">
-               <div class="pagination">
-                  <ul>
+            <div class="clearfix"></div>
+            <%= will_paginate %>
+            <br>
+            <!-- <div class="toolbar-bottom"> -->
+            <!-- <div class="pagination"> -->
+               <!-- <ul>
                      <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
                      <li><a href="#">1</a></li>
                      <li><a href="#">2</a></li>
@@ -66,11 +63,11 @@
                      <li><span>...</span></li>
                      <li><a href="#">19</a></li>
                      <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
-                  </ul>
+                  </ul> -->
+                  <!-- </div> -->
+                  <!-- </div> -->
+                  <!-- end tool bar bottom -->
                </div>
-            </div> -->
-            <!-- end tool bar bottom -->
+            </div>
          </div>
-      </div>
-   </div>
-</main>
+      </main>

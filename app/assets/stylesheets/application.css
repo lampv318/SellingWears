@@ -13,8 +13,3 @@
 *= require_tree .
 *= require_self
 */
-
-.btn-danger {
-	background-color: #d9534f !important;
-	border-color: #d43f3a !important;
-}
