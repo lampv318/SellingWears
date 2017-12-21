@@ -1,8 +1,43 @@
 <% provide(:title, 'Finalize') %>
 <% provide(:button_text, 'Create order') %>
-<h1>Please enter your details</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= render 'form' %>
-  </div>
-</div>
+<main class="wrapper main-content detail">
+    <!-- breadcrumb -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="items">
+          <li class="item home">
+            <a href="#" title="Go to Home Page">Home</a>
+          </li>
+          <li class="item cart">
+            <a href="#" >Checkout</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <!-- End breadcrumbs -->
+
+    <!-- Container -->
+    <div class="container">
+      <!-- shop step -->
+      <div class="shop-step">
+        <div class="container">
+          <ul class="clearfix">
+            <li class="checked">
+              <span class="count">01</span>
+              <span class="label">Shopping cart</span>
+            </li>
+            <li class="checked">
+              <span class="count">02</span>
+              <span class="label">Check out</span>
+            </li>
+            <li>
+              <span class="count">03</span>
+              <span class="label">Order Complete</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+        <%= render "form" %>
+    </div>
+  </main>

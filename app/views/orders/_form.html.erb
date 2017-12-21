@@ -17,8 +17,8 @@
       class: 'form-control' %>
 
     <%= f.hidden_field :state_order_id, value: '2' %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :order_id, value: current_order.id %>
+    <%= render "order_line" %>
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
 <% end %>
