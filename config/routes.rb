@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "static_pages#home", page: "home"
   get "/static_pages/:page", to: "static_pages#show"
   get "/help", to: "static_pages#help"
@@ -18,11 +19,11 @@ Rails.application.routes.draw do
   resources :order_lines
   resource :cart, only: [:show]
   resources :orders
-  namespace :admin do
-    resources :products
-    resources :categories, except: [:edit, :update, :destroy]
-    resources :orders
-  end
+  # namespace :admin do
+  #   resources :products
+  #   resources :categories, except: [:edit, :update, :destroy]
+  #   resources :orders
+  # end
   namespace :shipper do
     resources :orders
   end
