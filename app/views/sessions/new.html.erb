@@ -1,24 +1,33 @@
 <% provide(:title, "Log in") %>
-<h1 style="margin-top:60px" >Log in</h1>
 
-<div class="row" style="margin-bottom: 60px;">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
-      <% end %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
+<div class="breadcrumbs breadcrumbs-v2">
+   <div class="container clearfix">
+      <ul class="items">
+         <li class="item home">
+            <%= link_to "Home", root_path, "title"=>"Go to Home Page" %>
+         </li>
+         <li class="item cart">
+            <a href="#" >Login-register</a>
+         </li>
+      </ul>
+   </div>  
 </div>
+<main class="wrapper main-content ">
+   <!-- login-register-text -->
+   <section class="login-register">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6 col-sm-6">
+               <%= render "components/login-register/login_form" %>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+               <%= render "components/login-register/register_form" %>
+            </div>
+
+         </div>
+      </div>
+
+   </section>
+   <!-- end login-register -->
+</main>
