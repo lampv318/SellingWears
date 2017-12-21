@@ -1,0 +1,42 @@
+<h2 class="title title-contact-v2 text-left"><span>SIGN IN</span></h2>
+<P>Hello, welcome to your account.</P>
+<div class="engo-social-login row">
+   <div class="col-sm-6 col-xs-12">
+      <a class="engo-social-button engo-social-fb" href=""><i class="fa fa-facebook"></i> Sign in with Facebook</a>
+   </div>
+   <div class="col-sm-6 col-xs-12">
+      <a class="engo-social-button engo-social-tw" href=""><i class="fa fa-twitter"></i> Sign in with Twitter</a>
+   </div>
+</div>
+<!-- <form action="#" class="contact-form"> -->
+<%= form_for(:session, url: login_path, :html=>{:class=>'contact-form'}) do |f| %>
+<div class="row">
+   <div class="col-md-12">
+      <div class="input-field">
+         <%= f.label :email, 'Email address <span class="required">*</span>'.html_safe, :html=>{:class=>'wc_login_label'} %>
+         <%= f.email_field :email, class: 'input-text'%>
+      </div>
+   </div>
+   <div class="col-md-12">
+      <div class="input-field">
+         <%= f.label :password do %>Password <span class="required">*</span><% end %>
+         <%= f.password_field :password, class: 'input-text'%>
+      </div>
+   </div>
+   <div class="col-md-12">
+      <p class="form-group form-row">
+         <!-- <input type="hidden" id="_wpnonce"  value="14eb724814"> -->
+         <!-- <input type="hidden"  value="">  -->
+         <%= f.label :remember_me, class: "inline pull-left wc_rememberme" do %>
+         <%= f.check_box :remember_me, id: "rememberme" %> Remember me 
+         <% end %>
+
+         <a class="pull-right wc-lost-pass" href="">Lost your password?</a>
+      </p>
+   </div>
+   <div class="col-md-4 col-sm-6">
+      <%= f.submit "Login now", class: "button btn", style: "color: white; font-size:14px; line-height:20px;letter-spacing:2px;" %>
+   </div>
+</div>
+<% end %>
+<!-- </form> -->
