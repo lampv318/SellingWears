@@ -1,6 +1,4 @@
 <div class="breadcrumbs ">
-</div>
-<div class="breadcrumbs ">
    <div class="container">
       <ul class="items">
          <li class="item home">
@@ -14,7 +12,7 @@
    </div>
 </div>
 <!-- End breadcrumbs -->
-<main id="maincontent" class="page-main">
+<main id="maincontent" class="page-main products-page">
    <div class="container">
       <div class="columns">
          <!-- Col main -->
@@ -40,12 +38,15 @@
                </div>
                <!-- .sort -->
             </div>
-            <div class="product-grid">
+            <div class="product-grid grid--uniform">
                <!-- product -->
-               <% @products.each do |product| %>
-                  <div class="col-xs-12 col-sm-4">
-                     <%= render "components/products/product_item", product: product%>
-                  </div>
+
+               <% @products.limit(9).each do |product| %>
+
+               <div class="col-xs-12 col-sm-4 grid--uniform-one-third">
+                  <%= render "components/products/product_item", product: product%>
+               </div>
+
                <!-- end product -->
                <% end %>  
               <%= will_paginate %>

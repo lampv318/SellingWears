@@ -1,5 +1,7 @@
 {
   "name": "SellingWears",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "aliexpress": "^0.2.2"
+  }
 }
