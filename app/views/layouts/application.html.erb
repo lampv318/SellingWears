@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title yield(:title) %></title>
-    <%= csrf_meta_tags %>
+<head>
+   <title><%= full_title yield(:title) %></title>
+   <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
-  </head>
+   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+   <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+</head>
 
-  <body>
-     <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <%= render "layouts/header" %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
-    <%= debug(params) if Rails.env.development? %>
-  </body>
+<body>
+   <% flash.each do |message_type, message| %>
+   <div class="alert alert-<%= message_type %>"><%= message %></div>
+   <% end %>
+   <div id="page">   
+      <div class="wrapper-inner row-offcanvas row-offcanvas-left">
+         <div class="page-wrapper page full-width">
+            <%= render "layouts/header" %>
+
+            <%= yield %>
+            <%= render "layouts/footer" %>
+         </div>
+      </div>
+   </div>
+    <!-- debug(params) if Rails.env.development?  -->
+</body>
 </html>
