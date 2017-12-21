@@ -1,63 +1,74 @@
-   <!-- tabs-collection -->
-   <section id="engo-3" class="engo-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0ms">
-      <div class="container-full-screen-2">
-         <div id="tabs-collection" class="tabs-collection">
-            <div class="tab-container">
-               <div class="tab-title box-title">
-                  <ul class="ul-tab">
-                     <li class="active" data-tab="tab-most-wanted">
-                        <h3 class="h3-title">
-                           <a href="#">Most wanted</a>
-                        </h3>
-                     </li>
-                     <li data-tab="tab-new-arrival">
-                        <h3 class="h3-title">
-                           <a href="#">New arrival</a>
-                        </h3>
-                     </li>
-                     <li data-tab="tab-best-seller">
-                        <h3 class="h3-title">
-                           <a href="#"> Best seller</a>
-                        </h3>
-                     </li>
-                  </ul>
-                  <div class="title-icon">
-                     <img src="images/title-icon.png" alt="">
+<!-- tabs-collection -->
+<section id="engo-3" class="engo-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0ms">
+   <div class="container-full-screen-2">
+      <div id="tabs-collection" class="tabs-collection">
+         <div class="tab-container">
+            <div class="tab-title box-title">
+               <ul class="ul-tab">
+                  <li class="active" data-tab="tab-most-wanted">
+                     <h3 class="h3-title">
+                        <a href="#"><%= @category_1[1].category.name %></a>
+                     </h3>
+                  </li>
+                  <li data-tab="tab-new-arrival">
+                     <h3 class="h3-title">
+                        <a href="#"><%= @category_2[1].category.name %></a>
+                     </h3>
+                  </li>
+                  <li data-tab="tab-best-seller">
+                     <h3 class="h3-title">
+                        <a href="#"><%= @category_3[1].category.name %></a>
+                     </h3>
+                  </li>
+               </ul>
+               <div class="title-icon">
+                  <img src="images/title-icon.png" alt="">
+               </div>
+            </div>
+            <!-- tab container -->
+            <div class="tab-content tab-most-wanted current box-content active">
+               <div class="product-grid ">
+                  <div class="row row-items clearfix">
+                     <% @category_1.limit(6).each do |product| %>
+                     <div class="col-md-2 col-sm-3">
+                        <%= render "components/products/product_item", product: product %>
+                     </div>
+                     <% end %>
                   </div>
                </div>
-               <!-- tab container -->
-              <div class="tab-content tab-most-wanted current box-content active">
-                <div class="product-grid ">
-                  <div class="row row-items clearfix">
-                    <% @product_1.each do |product| %>
-                      <%=  render "components/products/product_column", product: product %>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-                       
-              <div class="tab-content tab-new-arrival current box-content">
-                 <div class="product-grid ">
-                    <div class="row row-items clearfix">
-                      <% @product_2.each do |product| %>
-                        <%=  render "components/products/product_column", product: product %>
-                      <% end %>
-                    </div>
-                  </div>
-              </div>
-
-             <div class="tab-content tab-best-seller current box-content">
-                <div class="product-grid ">
-                  <div class="row row-items clearfix">
-                    <% @product_3.each do |product| %>
-                      <%=  render "components/products/product_column", product: product %>
-                    <% end %>
-                  </div>
-                </div>
             </div>
-      <!-- end tab container -->
+
+            <div class="tab-content tab-new-arrival current box-content">
+               <div class="product-grid ">
+                  <div class="row row-items clearfix">
+                     <% @category_2.limit(6).each do |product| %>
+                     <div class="col-md-2 col-sm-3">
+                        <%= render "components/products/product_item", product: product %>
+                     </div>
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+
+            <div class="tab-content tab-best-seller current box-content">
+               <div class="product-grid ">
+                  <div class="row row-items clearfix">
+                     <% @category_3.limit(6).each do |product| %>
+                     <div class="col-md-2 col-sm-3">
+                        <%= render "components/products/product_item", product: product %>
+                     </div>
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+            <!-- end tab container -->
+         </div>
+      </div>
    </div>
-</div>
-</div>
 </section>
 <!-- end tab colection -->
+<script type="text/javascript">
+   var product = <%= @category_1.to_json.html_safe -%>;
+
+   console.log(product);
+</script>

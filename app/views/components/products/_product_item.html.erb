@@ -1,10 +1,10 @@
 <!-- product -->
 <div class="product-item wow fadeInUp animated" data-wow-duration="1s" data-wow-delay="0ms">
    <div class="product-img">
-      <a href="#" class="image-hover">
+      <a href="/products/<%= product.id %>" class="image-hover">
          <div class="product-img product-image-photo">
-            <img src="images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
-            <img src="images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
+            <img src="/images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
+            <img src="/images/collections/<%= product.id %>.jpg" alt="" class="product-image-photo">
          </div>
       </a>
    </div>
@@ -19,7 +19,7 @@
          </div>
       </div>
       <div class="product-name">
-         <%= link_to product.name ,product %></h4>
+         <h4><%= link_to product.name ,product %></h4>
       </div>
       <div class="price-box price-final_price">
          <span class="price">
