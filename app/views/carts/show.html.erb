@@ -116,7 +116,7 @@
 					<table>
 						<tr class="cart-subtotal">
 							<th>Subtotals:</th>
-							<td><strong><span class="amount">$105.00</span></strong></td>
+							<td><strong><span ><%= number_to_currency current_order.subtotal %></span></strong></td>
 						</tr>
 						<tr class="shipping">
 							<th>Shipping:</th>
@@ -139,7 +139,7 @@
 		<div class="cart-actions clearfix">
 			<form action="#">
 				<!-- <a class="button pull-right" href="checkout.html">PROCESS TO CHECK OUT</a> -->
-				<%= link_to "Checkout", new_order_path, class: "btn btn-success btn-primary" %></td>
+				<%= link_to "Checkout", new_order_path, class: "button pull-right" %></td>
 			</form>
 		</div>
 		<!-- .cart-actions -->
