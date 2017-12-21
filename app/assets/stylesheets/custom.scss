@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$desktop:            "screen and (max-width: 1200px)";
+$tablet-land:      "screen and (max-width: 991px)";
+$tablet-port:      "screen and (max-width: 768px)";
+$mobile-land:         "screen and (max-width: 480px)";
+$mobile-port:         "screen and (max-width: 360px)";
+
 @mixin grid-uniform-clearfix($grid-breakpoint-type:"") {
   .grid--uniform {
     .#{$grid-breakpoint-type}one-half:nth-child(2n+1),
@@ -27,5 +33,5 @@
 }
 
 .products-page .product-grid .col-xs-12:nth-child(3n+1) {
-   // clear: both;
+   clear: both;
 }
