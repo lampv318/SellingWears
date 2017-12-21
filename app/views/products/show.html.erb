@@ -11,11 +11,8 @@
             <li class="item home">
                <a href="/" title="Go to Home Page">Home</a>
             </li>
-<<<<<<< HEAD
             <% if @product.category != nil %> 
-=======
-            <% if @product.category != nil %>
->>>>>>> master
+
             <li class="item category">
                <a href="#" ><%= @product.category.name %></a>
             </li>
@@ -32,31 +29,16 @@
       <div class="container">
          <%= render "components/product/product_info" %>
          <%= render "components/product/product_desciption" %>
-<<<<<<< HEAD
           <!-- render "components/product/product_related"  -->
           <br><br><br>
-=======
-         <!--  render "components/product/product_related" -->
->>>>>>> master
+
       </div>
    </div>
    <!-- eng product single -->
 </main>
 
-<<<<<<< HEAD
 <script type="text/javascript">
    var product = <%= @product.to_json.html_safe -%>;
 
    console.log(product);
 </script>
-=======
-<script>
-   var json = <%= @product.to_json.html_safe -%>;
-   // console.log(parseJSON(stuff));
-   // alert("<%=@product%>");
-   // json = json.replace(/&quot;/g, '"');  
-
-   // var obj = JSON && JSON.parse(json) || $.parseJSON(json);
-   console.log(json);
-</script>
->>>>>>> master
