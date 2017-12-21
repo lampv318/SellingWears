@@ -1,0 +1,62 @@
+<main class="wrapper main-content detail">
+    <!-- breadcrumb -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="items">
+          <li class="item home">
+            <a href="#" title="Go to Home Page">Home</a>
+          </li>
+          <li class="item cart">
+            <a href="#">Oder Complete</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <!-- End breadcrumbs -->
+
+    <!-- Container -->
+    <div class="container">
+      <!-- shop step -->
+      <div class="shop-step">
+        <div class="container">
+          <ul class="clearfix">
+            <li class="checked">
+              <span class="count">01</span>
+              <span class="label">Shopping cart</span>
+            </li>
+            <li class="checked">
+              <span class="count">02</span>
+              <span class="label">Check out</span>
+            </li>
+            <li class="checked">
+              <span class="count">03</span>
+              <span class="label">Order Complete</span>
+            </li>
+          </ul>
+        </div>
+        <!-- .container -->
+      </div>
+      <!-- .shop-step -->
+
+      <div class="oder-complete center">
+        <div class="img">
+          <a class= "inline-block margin-bottom-50"><%= image_tag("oder-complete.png") %></a> 
+          <img class="inline-block margin-bottom-50" src="images/assets/oder-complete.png" alt="">
+        </div>
+        <div>
+          <span class="oder-title margin-bottom-40">Thanks you for shopping with us, your order is complete!</span>
+
+        </div>
+        <div class="action margin-bottom-100 margin-top-40">
+          <%= link_to "Home page", root_path , class: "btn btn-lg btn-outline" %>
+          <%= link_to "CONTINUE SHOPPING" , products_path , class: "btn btn-lg btn-primary margin-left-10"%>
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- end container -->
+
+  </main>
