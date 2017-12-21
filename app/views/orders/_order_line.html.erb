@@ -1,0 +1,73 @@
+<div class="your-order">
+          <h2 class="title">YOUR ORDER</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="product-total">
+                <table>
+                  <tr class="table-title">
+                    <th>Product</th>
+                    <th>Totals</th>
+                  </tr>
+                  <tr class="product-order">
+                    <td colspan="2">
+                      <ul>
+                        <% current_order.order_lines.each do |order_line| %>
+                          <li class="clearfix">
+                          <span class="product-qty clearfix"><a><%= order_line.product.name %>x<%= order_line.number %></a></span>
+                          <span class="price"><%= number_to_currency order_line.price %></span>
+                        </li>
+                        <% end %>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="cart-subtotal">
+                    <th>Subtotals:</th>
+                    <td><strong><span class="amount"><%= number_to_currency current_order.subtotal %></span></strong></td>
+                  </tr>
+                  <tr class="shipping">
+                    <th>Shipping:</th>
+                    <td>Free Shipping</td>
+                  </tr>
+                  <tr class="order-total">
+                    <th>
+                      <div class="red-bg">Order Totals :</div>
+                    </th>
+                    <td>
+                      <div class="red-bg"><strong><span class="amount">$105.00</span></strong></div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="payment_methods">
+                <ul>
+                  <li>
+                    <div class="checkbox">
+                      <input type="radio" checked="checked" value="cheque" name="payment_method" id="direct">
+                      <label for="direct">DIRECT BANK TRANSFER</label>
+                    </div>
+                    <div class="payment-box">
+                      <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="checkbox">
+                      <input type="radio" value="cheque" name="payment_method" id="payment_method">
+                      <label for="payment_method">CHEQUE PAYMENT</label>
+                    </div>
+                  </li>
+                  <li class="paypal-method">
+                    <div class="checkbox">
+                      <input type="radio" value="cheque" name="payment_method" id="paypal">
+                      <label for="paypal">Paypal</label>
+                      <img src="images/payment_method.png" alt="">
+                      <a href="#">What is paypal?</a>
+                    </div>
+                    <p>Pay via PayPal you can pay with your credit card if you don’t have a PayPal account.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
