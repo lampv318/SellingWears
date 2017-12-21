@@ -30,10 +30,9 @@
     <li>
       <%= link_to "Categories", categories_path %>
       <ul class="sub-menu">
-       <li><a href="#">Pant</a></li>
-       <li><a href="#">Vest</a></li>
-       <li><a href="#">Shirt</a></li>
-       <li><a href="#">Dress</a></li>
+      <% categories.each do |category| %>
+        <li><a><%= link_to category do %><%= category.name %><% end %></a></li>
+      <% end %>
      </ul>
    </li>
 
@@ -70,132 +69,6 @@
     <i>(<%= current_order.order_lines.size %>)</i>
   </div>
   <% end %>
-  <!-- <div class="mini-cart-content off-canvas-content">
-    <div class="clearfix top-mini-cart">
-     <div class="cart-icon cart-control">
-      <%= image_tag("assets/cart-white.png") %>
-    </div>
-    <div class="cart-label cart-control f-left">
-      Bag
-      <i>(3)</i>
-    </div>
-    <a href="#" class="close-off-canvas btn-close f-right">
-      <%= image_tag("assets/btn-close.png") %>
-    </a>
-  </div> -->
- <!--  <ul class="cart_list">
-   <li class="item clearfix">
-    <a href="#" class="image pull-left">
-     <%= image_tag("minicart/mini-product2.png") %>
-   </a>
-   <div class="cart-main-content media-body">
-     <h3 class="name">
-      <a href="#">
-       Legging Cathedral                      
-     </a>
-   </h3>
-   <div class="cart-item">
-    <div class="price">
-     <span class="amount">$35.00</span>
-     <del>$75.00</del>
-   </div>
-   <span class="qty">
-     QTY: 01
-   </span>                    
- </div>
- <a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
-</div>
-</li>
-<li class="item clearfix">
-  <a href="#" class="image pull-left">
-   <img src="images/minicart/mini-product2.png" alt="neon_legging_legx_2">                
- </a>
- <div class="cart-main-content media-body">
-   <h3 class="name">
-    <a href="#">
-     Legging Cathedral                      
-   </a>
- </h3>
- <div class="cart-item">
-  <div class="price">
-   <span class="amount">$35.00</span>
-   <del>$75.00</del>
- </div>
- <span class="qty">
-   QTY: 01
- </span>                    
-</div>
-<a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
-</div>
-</li>
-<li class="item clearfix">
-  <a href="#" class="image pull-left">
-   <img src="images/minicart/mini-product2.png" alt="neon_legging_legx_2">                
- </a>
- <div class="cart-main-content media-body">
-   <h3 class="name">
-    <a href="#">
-     Legging Cathedral                      
-   </a>
- </h3>
- <div class="cart-item">
-  <div class="price">
-   <span class="amount">$35.00</span>
-   <del>$75.00</del>
- </div>
- <span class="qty">
-   QTY: 01
- </span>                    
-</div>
-<a href="#" class="remove" title="Remove this item"><i class="fa  fa-times-circle"></i></a>
-</div>
-</li>
-</ul> -->
-<!-- end product list -->
-<!-- <div class="total-minicart">
- <p class="total"><strong>Subtotal:</strong> <span class="amount">$105.00</span></p>
- <p class="buttons clearfix">
-  <a href="#" class="btn pull-left btn-minicart">View Cart</a>
-  <a href="#" class="btn btn-primary pull-right  checkout btn-minicart">Checkout</a>
-</p>
-</div>
-</div>
-</div> -->
-<!-- end cart -->
-
-<!-- <div class="settings">
- <div class="btn-settings dropdown">
-  <img src="images/icons/setting.svg" alt="">
-
-</div>
-
-<div class="toplinks dropdown-content">
-
- <div class="set links">
-   <div>
-    <i class="fa fa-unlock-alt"></i>
-    <span>Login / Register</span>
-  </div>
-  <div>
-    <i class="fa fa-user"></i>
-    <span>My Account</span>
-  </div>
-  <div>
-    <i class="fa fa-heart"></i>
-    <span>My Wishlist</span>
-  </div>
-  <div>
-    <i class="fa fa-check-circle"></i>
-    <span>Checkout</span>
-  </div>
-</div>
-</div>
-
-</div>
--->
-
-
-
 </div>
 <!-- end right header -->
 </div>
