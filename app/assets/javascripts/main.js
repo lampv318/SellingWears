@@ -18,6 +18,13 @@ $(function(){
 		doAjaxAddToCart(productId, quantity);
 	})
 
+	$('.btn-add-to-cart').click(function() {
+		var productId = $(this).data('product-id');
+		var quantity = $("#AddToCartForm .qty").val();
+
+		doAjaxAddToCart(productId, quantity);
+	})
+
 	var doAjaxAddToCart = function(productId, quantity) {
 		$.ajax({
 			type: "POST",
@@ -50,8 +57,6 @@ $(function(){
 		$('#alert-success').show();
 	}
 	var showError = function(text) {
-		// $('#alert-error').iziModal('setSubtitle', subTitle);
-		// $('#alert-error').iziModal('open');
 		console.error(text);
 	}
 
