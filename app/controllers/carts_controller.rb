@@ -11,6 +11,10 @@ class CartsController < ApplicationController
   end
 
   def show
-    @order_lines = current_order.order_lines
+    if current_order
+      @order_lines = current_order.order_lines
+    else
+      redirect_to root_path
+    end
   end
 end
