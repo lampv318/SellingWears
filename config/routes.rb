@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get    "/login",   to: "sessions#new"
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
+  get "/aliexpress", to: "products#aliexpress"
   resources :products
   resources :users
   resources :comments, only: [:create, :destroy]

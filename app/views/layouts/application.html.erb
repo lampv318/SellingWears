@@ -7,7 +7,7 @@
    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
 </head>
-  
+
 <body>
    <% flash.each do |message_type, message| %>
    <div class="alert alert-<%= message_type %>"><%= message %></div>
@@ -16,15 +16,19 @@
    <div id="page">   
       <div class="wrapper-inner row-offcanvas row-offcanvas-left">
          <div class="page-wrapper page full-width">
+            <% unless logged_in? && @current_user.is_admin %>      
             <%= render "layouts/header" %>
+            <% end %>
 
             <%= yield %>
+            
+            <% unless logged_in? && @current_user.is_admin %>      
             <%= render "layouts/footer" %>
+            <% end %>
             <%= render "components/item_loading" %>
          </div>
       </div>
    </div>
-    <!-- debug(params) if Rails.env.development?  -->
 </body>
 
 </html>
