@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController 
   def home
-    @product_1 = Product.where category_id: '1'
-    @product_2 = Product.where category_id: '2'
-    @product_3 = Product.where category_id: '3'
+    @category_1 = Product.where category_id: '1'
+    @category_2 = Product.where category_id: '2'
+    @category_3 = Product.where category_id: '3'
     if logged_in?
       @order_line = current_order.order_lines.new
     end

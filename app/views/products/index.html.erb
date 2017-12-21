@@ -41,7 +41,7 @@
 
             <div class="product-grid grid--uniform ">
                <% @products.limit(9).each do |product| %>
-                  <div class="col-xs-12 col-sm-4 desktop-one-third">
+                  <div class="col-xs-12 col-sm-4">
                      <%= render "components/products/product_item", product: product%>
                   </div>
                <% end %>  
