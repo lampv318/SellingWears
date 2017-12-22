@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class IsAdmin::CategoriesController < ApplicationController
   before_action :logged_in_user
   before_action :require_admin
 

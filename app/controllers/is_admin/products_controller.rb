@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class IsAdmin::ProductsController < ApplicationController
   before_action :logged_in_user
   before_action :require_admin
 
