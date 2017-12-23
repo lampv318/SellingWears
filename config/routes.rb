@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :order_lines
   resource :cart, only: [:show]
   resources :orders
+  resources :relationships
   namespace :is_admin do
     resources :products
     resources :categories, except: [:edit, :update, :destroy]
