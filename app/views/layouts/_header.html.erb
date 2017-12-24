@@ -48,6 +48,7 @@
 
  <li><a href="#" title="">Contact us</a></li>
  <%  if logged_in? %>
+ <li><%= link_to "Whistlist", products_user_path(current_user) %></li>
  <li><%= link_to "My accout", login_path %></li>
  <% else %>
  <li><%= link_to "Log in", login_path %></li>
