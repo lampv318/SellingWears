@@ -43,6 +43,12 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def products
+    @user = User.find params[:id]
+    @products = @user.products.paginate page: params[:page]
+    render "wishlist"
+  end
+
   private
 
     def user_params

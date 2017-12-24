@@ -1,0 +1,76 @@
+<main class="wrapper main-content detail">
+         <!-- breadcrumb -->
+         <div class="breadcrumbs">
+            <div class="container">
+               <ul class="items">
+                  <li class="item home">
+                     <a href="#" title="Go to Home Page">Home</a>
+                  </li>
+                  <li class="item cart">
+                     <a href="#">Wishlist</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!-- End breadcrumbs -->
+         <!-- Container -->
+         <div class="container">
+            <div class="page-title no-bg margin-top-60 margin-bottom-80">
+               <div class="container">
+                  <h1 class="title">Wishlist</h1>
+                  <p>Lorem Ipsum has been the industry’s standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+               </div>
+            </div>
+            <!-- Form cart -->
+            <form class="cart-form" action="#">
+               <div class="table-responsive">
+                  <table class="table cart-table">
+                     <thead>
+                        <tr>
+                           <th></th>
+                           <th class="product-name title">Product</th>
+                           <th></th>
+                           <th>Price</th>
+                           <th>STOCK STATUS</th>
+                           <th></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+
+                      <% @products.each do |product| %>
+
+                      <%= render "users/form_wishlist", product: product %>
+                      <% end %>
+
+                        <!-- <tr>
+                           <td class="product-remove">
+                              <a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
+                           </td>
+                           <td class="product-img clearfix">
+                                 <a href="single-product.html">
+                                 <img src="images/product/3.jpg" alt="">
+                                  </a>
+                              </td>
+                              <td class="product-name-ct">
+                                 <a href="single-product.html">
+                                  Legging Cathedral
+                                 </a>
+                              </td>
+                           <td class="product-price">
+                              <p class="price">$35.00</p>
+                           </td>
+                           <td class="product-stock-status">
+                              <span class="wishlist-in-stock">In Stock</span>                            
+                           </td>
+                           <td class="product-add-to-cart">
+                              <a href="#" class="btn btn-lg btn-primary">Add to cart</a>
+                           </td> -->
+                        <!-- </tr> -->
+                     </tbody>
+                  </table>
+               </div>
+            </form>
+            <!-- end form cart -->
+         </div>
+         <!-- end container -->
+      </main>
