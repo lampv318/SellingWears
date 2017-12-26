@@ -37,7 +37,7 @@ $mobile-port:         "screen and (max-width: 360px)";
 }
 
 .get-product-api {
-  .-col-left, .-col-right {
+  .product-list, .product-detail {
     height: 90vh;
     max-height: 90vh;
     overflow-y: auto;
