@@ -15,7 +15,18 @@
                <div id="comments">
                   <ul class="commentlist">
 
-                     <li class="comment">
+
+                     <div class="col-md-15">
+                        <% if @product.comments.count == 0 %>
+                        <p>There are no review in products. </p>
+                        <%else%>
+                          <%= render @comments %>
+                        <%= will_paginate @comments %>
+                      <% end %>
+                    </div>
+
+
+                   <!--   <li class="comment">
                         <div class="comment_container">
                            <img class="avatar" alt="" src="images/author-1.png">
                            <div class="comment-info">
@@ -33,7 +44,7 @@
                               </div>
                            </div>
                         </div>
-                     </li>
+                     </li> -->
 
                   </ul>
                </div>
@@ -43,33 +54,31 @@
                   <div id="review_form">
                      <div class="comment-respond" id="respond">
                         <h2 class="comment-reply-title">Here you can review this item</h2>
-                        <form class="comment-form" id="commentform" method="post" action="#">
-                           <p class="comment-form-author">
-                              <input size="30" value="" placeholder="Your Name *" name="author" id="author" type="text">
-                           </p>
-                           <p class="comment-form-email">
-                              <input size="30" value="" placeholder="Your Email *" name="email" id="email" type="text">
-                           </p>
                            <div class="clearfix"></div>
                            <p class="comment-form-comment">
-                              <textarea aria-required="true" rows="3" cols="45" placeholder="Message *" name="comment" id="comment"></textarea>
+                              <section class="micropost_form">
+                                 <% if logged_in? %>
+                                    <% @comment = @product.comments.build %>
+                                    <%= render "comments/comment_form" %>
+                                    <!-- <textarea aria-required="true" rows="3" cols="45" placeholder="Message *" name="comment" id="comment"></textarea> -->
+                                 <% end %>
+                           </section>
                            </p>
                            <p class="form-submit">
-                             <!--  <span class="ratings">
+                              <span class="ratings">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star empty"></i>
                                  <i class="fa fa-star empty"></i>
-                              </span> -->
-                              <input value="ADD REVIEW" class="button" id="submit" name="submit" type="submit">
+                              </span>
                            </p>
-                        </form>
+                        <!-- </form> -->
                      </div>
-                     
                   </div>
                </div>
             </div>
+
          </div>
       </div>
    </div> 

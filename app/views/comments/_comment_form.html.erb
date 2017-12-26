@@ -1,9 +1,9 @@
 <%= form_for @comment do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="field">
-    <p> <%= f.text_area :content, placeholder: "Add comment" %> </p>
+    <p> <%= f.text_area :content, placeholder: "Add review", rows: "5" ,cols: "80" %> </p>
     <div> <%= f.hidden_field :user_id, value: current_user.id %> </div>
     <div> <%= f.hidden_field :product_id, value: @product.id %> </div>
   </div>
-  <%= f.submit "comment", class: "btn btn-primary" %>
+  <%= f.submit "review", class: "btn btn-primary" %>
 <% end %>

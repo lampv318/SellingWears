@@ -1,4 +1,4 @@
-<li id="comment-<%= comment.id %>">
+<!-- <li id="comment-<%= comment.id %>">
   <span class="user"><%= link_to comment.user.name, comment.user %></span>
   <span class="content"><%= comment.content %></span>
   <span class="timestamp">
@@ -8,4 +8,26 @@
           <%= link_to "delete", comment, method: :delete,
           data: {confirm: ".sure"} %>
   <% end %>
+</li>
+ -->
+
+<li class="comment" id="comment-<%= comment.id %>">
+  <div class="comment_container">
+     <!-- <img class="avatar" alt="" src="images/author-1.png"> -->
+     <div class="comment-info">
+        <h4 class="name"><%= link_to comment.user.name, comment.user %></h4>
+        <span class="ratings">
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star"></i>
+           <i class="fa fa-star empty"></i>
+           <i class="fa fa-star empty"></i>
+        </span>
+        <span class="timestamp"> Posted <%= time_ago_in_words(comment.created_at) %> ago. </span>
+        <div class="description"> <p><%= comment.content %></p> </div>
+        <% if (can? :destroy, Comment) %>
+          <%= link_to "delete", comment, method: :delete, data: {confirm: "sure"} %>
+        <% end %>
+     </div>
+  </div>
 </li>
