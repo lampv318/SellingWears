@@ -41,9 +41,9 @@
 
             <div class="product-grid grid--uniform ">
                <% @products.limit(9).each do |product| %>
-                  <div class="col-xs-12 col-sm-4">
-                     <%= render "components/products/product_item", product: product%>
-                  </div>
+               <div class="col-xs-12 col-sm-4">
+                  <%= render "components/products/product_item", product: product%>
+               </div>
                <% end %>  
             </div>
             <!-- end product grid -->
@@ -53,21 +53,26 @@
             <br>
             <!-- <div class="toolbar-bottom"> -->
             <!-- <div class="pagination"> -->
-               <!-- <ul>
-                     <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
-                     <li><a href="#">1</a></li>
-                     <li><a href="#">2</a></li>
-                     <li><span class="current">3</span></li>
-                     <li><a href="#">4</a></li>
-                     <li><a href="#">5</a></li>
-                     <li><span>...</span></li>
-                     <li><a href="#">19</a></li>
-                     <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
-                  </ul> -->
-                  <!-- </div> -->
-                  <!-- </div> -->
-                  <!-- end tool bar bottom -->
-               </div>
-            </div>
+            <!-- <ul>
+               <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
+               <li><a href="#">1</a></li>
+               <li><a href="#">2</a></li>
+               <li><span class="current">3</span></li>
+               <li><a href="#">4</a></li>
+               <li><a href="#">5</a></li>
+               <li><span>...</span></li>
+               <li><a href="#">19</a></li>
+               <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
+            </ul> -->
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- end tool bar bottom -->
          </div>
-      </main>
+      </div>
+   </div>
+</main>
+<script type="text/javascript">
+   var products = <%= @products.to_json.html_safe -%>;
+
+   console.log(products);
+</script>
