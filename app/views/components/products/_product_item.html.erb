@@ -28,19 +28,26 @@
       </div>
       <!-- actions -->
       <div class="actions">
-            <% if logged_in? %>
-               <div class="action btn-quick-add-to-cart add-to-cart" data-product-id="<%= product.id %>">
-                  <a href="javascript:void(0)"  data-toggle="tooltip" data-placement="top" title="Add to cart">
-                  </a>
-               </div>
-            <% else %>
-               <div class="action add-to-cart">
-               <%= link_to "", login_path, "data-toggle" => "tooltip", "data-placement"=>"top", "title"=>"Login to buy" %>
-               </div>
+         <% if logged_in? %>
+            <div class="action btn-quick-add-to-cart add-to-cart" data-product-id="<%= product.id %>">
+               <a href="javascript:void(0)"  data-toggle="tooltip" data-placement="top" title="Add to cart">
+               </a>
+            </div>
+         <% else %>
+            <div class="action add-to-cart">
+            <%= link_to "", login_path, "data-toggle" => "tooltip", "data-placement"=>"top", "title"=>"Login to buy" %>
+            </div>
+         <% end %>
+         <div class="action add-to-wishlist" >
+             <% if logged_in? %>
+            <%= form_for current_user.relationships.build  do |f| %>       
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.submit "Add" %>
             <% end %>
-         <div class="action add-to-wishlist">
-            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
-            </a>
+            <% end %>
+           <!--  <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+            </a> -->
          </div>
          <div class="action add-to-quickview">
             <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Add to quickview">
