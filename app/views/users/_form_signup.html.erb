@@ -1,0 +1,44 @@
+<h2 class="title title-contact-v2 text-left"><span>CREATE A NEW ACCOUNT</span></h2>
+<P>Hello, welcome to your account.</P>
+   <%= form_for(@user, html: {class: "contact-form  margin-top-20"}) do |f| %>
+   <div class="row">
+       <!-- render 'shared/error_messages', object: f.object  -->
+      <div class="col-md-12">
+         <div class="input-field">
+            <%= f.label :name, 'Name <span class="required">*</span>'.html_safe, class: "wc_login_label" %>
+            <%= f.text_field :name, class: 'input-text' %>
+         </div>
+      </div>
+
+      <div class="col-md-12">
+         <div class="input-field">
+            <%= f.label :email, 'Email address <span class="required">*</span>'.html_safe, class: "wc_login_label" %>
+            <%= f.text_field :email, class: 'input-text' %>
+         </div>
+      </div>
+
+      <div class="col-md-12">
+         <div class="input-field">
+            <%= f.label :password, 'Password <span class="required">*</span>'.html_safe, class: 'wc_login_label' %>
+            <%= f.password_field :password, class: 'input-text' %>
+         </div>
+      </div>
+
+      <div class="col-md-12">
+         <div class="input-field">
+            <%= f.label :password_confirmation, "Confirmation password <span class='required'>*</span>".html_safe, class: 'wc_login_label' %>
+            <%= f.password_field :password_confirmation, class: 'input-text' %>
+         </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4">
+         <%= f.submit "SIGN UP", class: "button btn", style: "color: white; font-size:14px; line-height:20px;letter-spacing:2px;" %>
+      </div>
+   </div>
+<% end %>
+<h2 class="title title-contact-v2 text-left"><span>SIGN UP TODAY AND YOU’LL BE ABLE TO</span></h2>
+<ul class="wc-register-able">
+   <li><i class="fa fa-check"></i> Speed your way through the checkout.</li>
+   <li><i class="fa fa-check"></i> Track your orders easily.</li>
+   <li><i class="fa fa-check"></i> Keep a record of all purchases.</li>
+</ul>
