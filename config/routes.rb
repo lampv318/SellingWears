@@ -11,12 +11,17 @@ Rails.application.routes.draw do
   delete "/logout",  to: "sessions#destroy"
   get "/aliexpress", to: "products#aliexpress"
   resources :products
-  resources :users
+  resources :users do
+    member do
+      get :products
+    end
+  end
   resources :comments, only: [:create, :destroy]
   resources :categories, only: [:index, :show]
   resources :order_lines
   resource :cart, only: [:show]
   resources :orders
+  resources :relationships
   namespace :is_admin do
     resources :products
     resources :categories, except: [:edit, :update, :destroy]
