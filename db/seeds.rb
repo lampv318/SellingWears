@@ -38,20 +38,20 @@ StateOrder.create! id: 6, name: "Wait admin agree ......!"
 
 
 9.times do |n|
-  Product.create! name: "Dress " + Faker::Commerce.product_name, category_id: '1', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "#{n+1}.jpg"
+  Product.create! name: "Dress " + Faker::Commerce.product_name, category_id: '1', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "https://raw.githubusercontent.com/Thientran2910/SellingWears/master/collections/#{n+1}.jpg"
 end
 
 9.times do |n|
-  Product.create! name: "Pants " + Faker::Commerce.product_name, category_id: '2', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "#{n+1}.jpg"
+  Product.create! name: "Pants " + Faker::Commerce.product_name, category_id: '2', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "https://raw.githubusercontent.com/Thientran2910/SellingWears/master/collections/#{n+1}.jpg"
 
 end
 
 9.times do |n|
-  Product.create! name: "Shirt " + Faker::Commerce.product_name, category_id: '3', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "#{n+1}.jpg"
+  Product.create! name: "Shirt " + Faker::Commerce.product_name, category_id: '3', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "https://raw.githubusercontent.com/Thientran2910/SellingWears/master/collections/#{n+1}.jpg"
 end
 
 9.times do |n|
-  Product.create! name: "Vest " + Faker::Commerce.product_name, category_id: '4', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "#{n+1}.jpg"
+  Product.create! name: "Vest " + Faker::Commerce.product_name, category_id: '4', price: Faker::Commerce.price, description: Faker::Lorem.paragraph, img_url: "https://raw.githubusercontent.com/Thientran2910/SellingWears/master/collections/#{n+1}.jpg"
 end
 
 
