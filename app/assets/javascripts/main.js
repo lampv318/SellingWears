@@ -5,11 +5,9 @@ $(function(){
 	$('.text-ajax').click(function(){
 		console.log("obj");
 	});
-	// AliExpress.BestSelling.get().then(function(goods){
-	// 	console.log('Best Selling items:');
+	
+	
 
-	// 	console.log(goods);
-	// });
 
 	$('.btn-quick-add-to-cart').click(function() {
 		var productId = $(this).data('product-id');
@@ -66,6 +64,33 @@ $(function(){
 	var hideLoading = function() {
 		$('#item-loading-v1').hide();
 	}   
+
+	if (window.location.pathname == '/aliexpress') {
+		$.ajax({
+			type: "GET",
+			url: "http://localhost:5000",
+			dataTpye: 'json',
+			headers: {
+				"Access-Control-Allow-Origin": "http://localhost:3000",
+				'Content-Type':'application/json'
+			},
+			beforeSend: function(xhr) {
+				xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+				showLoading();
+			},
+			success: function(data) {
+				hideLoading();
+				successGetAliexpress(data);
+			},
+			error: function(xhr, text) {
+				showError(xhr);
+			}
+		});
+	}
+
+	function successGetAliexpress(data) {
+		console.log(data);
+	}
 
 	$('#alert-success .close, #alert-error .close').click(function(){
 		$('#alert-success, #alert-error').hide();
