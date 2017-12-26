@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       log_in @user
-      redirect_to @user
+      redirect_to root_path
     else
       render "new"
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     if @user.update_attributes user_params 
-      redirect_to @user
+      redirect_to root_path
     else
       render "edit"
     end
