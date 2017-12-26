@@ -20,5 +20,10 @@ class ProductsController < ApplicationController
       redirect_to root_path
     end
   end
+  before_action :logged_in_user
+  def aliexpress
+    @products = Product.paginate page: params[:page]
+    render template: "products/aliexpress"
+  end
 
 end

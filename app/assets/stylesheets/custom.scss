@@ -7,7 +7,7 @@ $tablet-port:      "screen and (max-width: 768px)";
 $mobile-land:         "screen and (max-width: 480px)";
 $mobile-port:         "screen and (max-width: 360px)";
 
-@mixin grid-uniform-clearfix($grid-breakpoint-type:"") {
+@mixin grid-uniform-clearfix($grid-breakpoint-type:"col") {
   .grid--uniform {
     .#{$grid-breakpoint-type}one-half:nth-child(2n+1),
     .#{$grid-breakpoint-type}one-third:nth-child(3n+1),
@@ -28,10 +28,31 @@ $mobile-port:         "screen and (max-width: 360px)";
 }
 
 .btn-danger {
-   background-color: #d9534f !important;
-   border-color: #d43f3a !important;
+ background-color: #d9534f !important;
+ border-color: #d43f3a !important;
 }
 
 .products-page .product-grid .col-xs-12:nth-child(3n+1) {
-   clear: both;
+ clear: both;
+}
+
+.get-product-api {
+  .row {
+    margin: 0px;
+  }
+  .col-md-6 {
+    padding: 0px 10px;
+  }
+  .image-block {
+    display: flex;
+    justify-content: center;
+    .image {
+      width: 80px;
+      height: 100px;
+    }
+  }
+  .action {
+    display: block-inline;
+  }
+  
 }

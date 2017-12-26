@@ -1,6 +1,6 @@
 <h2 class="title title-contact-v2 text-left"><span>CREATE A NEW ACCOUNT</span></h2>
 <P>Hello, welcome to your account.</P>
-   <%= form_for(:user, html: {class: "contact-form  margin-top-20"}) do |f| %>
+   <%= form_for(@user, html: {class: "contact-form  margin-top-20"}) do |f| %>
    <div class="row">
        <!-- render 'shared/error_messages', object: f.object  -->
       <div class="col-md-12">
@@ -36,3 +36,9 @@
       </div>
    </div>
 <% end %>
+<h2 class="title title-contact-v2 text-left"><span>SIGN UP TODAY AND YOU’LL BE ABLE TO</span></h2>
+<ul class="wc-register-able">
+   <li><i class="fa fa-check"></i> Speed your way through the checkout.</li>
+   <li><i class="fa fa-check"></i> Track your orders easily.</li>
+   <li><i class="fa fa-check"></i> Keep a record of all purchases.</li>
+</ul>

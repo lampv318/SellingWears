@@ -1,4 +1,4 @@
-class Admin::OrdersController < ApplicationController
+class IsAdmin::OrdersController < ApplicationController
   before_action :logged_in_user
   before_action :require_admin
   

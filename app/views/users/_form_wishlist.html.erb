@@ -1,0 +1,24 @@
+<tr>
+ <td class="product-remove">
+    <a href="#" class="remove"><i class="fa fa-times-circle"></i></a>
+ </td>
+ <td class="product-img clearfix">
+       <a href="single-product.html">
+       <img src="<%= product.img_url %>" alt="" class="product-image-photo">
+        </a>
+    </td>
+    <td class="product-name-ct">
+       <a href="single-product.html">
+        <%= link_to product.name ,product %>
+       </a>
+    </td>
+ <td class="product-price">
+    <p class="price"><%= number_to_currency product.price %></p>
+ </td>
+ <td class="product-stock-status">
+    <span class="wishlist-in-stock">In Stock</span>                            
+ </td>
+ <td class="product-add-to-cart">
+    <a href="#" class="btn btn-lg btn-primary">Add to cart</a>
+ </td>
+</tr>

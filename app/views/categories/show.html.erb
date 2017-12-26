@@ -35,9 +35,9 @@
                </div>
             </div>
             <div class="product-grid clearfix" id="tabs-grid">
-               <% @products.each do |product| %>
+               <% @products.limit(9).each do |product| %>
                <div class="col-xs-12 col-sm-4">
-                  <%= render "components/products/product_item" , product: product %>
+                  <%= render "components/products/product_item", product: product%>
                </div>
                <% end %>
             </div>
@@ -45,3 +45,8 @@
       </div>
    </div>
 </main>
+<script type="text/javascript">
+   var products = <%= @products.to_json.html_safe -%>;
+
+   console.log(products);
+</script>

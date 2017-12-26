@@ -1,10 +1,19 @@
+<br>
+<br>
+<br>
+<br>
+
 <% @orders.each do |order| %>
 <li>
   Adress: <%= order.address %> .
   Subtotal: <%= order.subtotal %> .
-  Tax:  <%= order.tax %> .
   Status: <%= StateOrder.find(order.state_order_id).name %>
-  User Name: <%= User.find(order.user_id).name %>
+  User Name: <%= User.find(order.user_id).name %> ---------------
+  <%= link_to "Detail", order %>
 </li>
-<%= link_to "Detail", order %>
 <% end %>
+<br>
+<br>
+<br>
+<br>
+
