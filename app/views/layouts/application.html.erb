@@ -16,15 +16,11 @@
    <div id="page">   
       <div class="wrapper-inner row-offcanvas row-offcanvas-left">
          <div class="page-wrapper page full-width">
-            <% unless logged_in? && @current_user.is_admin %>      
             <%= render "layouts/header" %>
-            <% end %>
 
             <%= yield %>
             
-            <% unless logged_in? && @current_user.is_admin %>      
             <%= render "layouts/footer" %>
-            <% end %>
             <%= render "components/item_loading" %>
          </div>
       </div>
