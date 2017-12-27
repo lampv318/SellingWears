@@ -35,27 +35,47 @@
 		</div>
 		<div class="product-detail">
 			<div class="row">
-			<div class="col-xs-6">
-				<img class="img" src="">
-			</div>
-			<div class="col-xs-6">
-				<div><b>Name:</b> <span class="name"></span></div> <br>
-				<div><b>Price:</b> <span class="price"></span></div><br>
-				<b>Description</b>
-				<div class="description">
+				<div class="col-xs-6">
+					<img class="img" src="">
+				</div>
+				<div class="col-xs-6">
+					<div><b>Name:</b> <span class="name"></span></div> <br>
+					<div><b>Price:</b> <span class="price"></span></div><br>
+					<b>Description</b>
+					<div class="description">
 
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
+			<div class="row">
 
-		</div>
-		<br>
-		<div class="text-center">
-			<button class="btn btn-info btn-lg btn-save">SAVE</button>
-		</div>
+			</div>
+			<br>
+			<div class="text-center">
+				<button class="btn btn-info btn-lg btn-save">CREATE</button>
+			</div>
 		</div>
 	</div>
 </div>
 
 <% end %>
+
+<div class="hidden product-item-html">
+	<div class="row product-item">
+		<div class="col-xs-1 image-block">
+			<div class="image" style="background-repeat: none; background-position: center;background-size: cover">
+			</div> 
+		</div>
+		<div class="col-xs-7 text-left">
+			<div class="name">
+				<div>Name: <span class="name-value">name_</span></div>
+			</div>
+			<div class="info">
+				<div>Price: <span class="price-value">price_</span></div>
+			</div>
+		</div>
+		<div class="col-xs-3 action">
+			<button class="btn btn-primary btn-detail" data-url="product_url_" data-name="name_" data-price="price_">Detail</button>
+		</div>
+	</div>
+</div>

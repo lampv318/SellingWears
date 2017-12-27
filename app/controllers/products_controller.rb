@@ -6,6 +6,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def create
+    @product = Product.new product_params
+    if @product.save
+      flash[:success] = "Add Done!"
+      render template: "products/aliexpress"
+    else
+      flash[:alert] = "Wrong"
+      render :new
+    end
+  end
 
   def show
     @product = Product.find_by id: params[:id]
@@ -27,4 +37,8 @@ class ProductsController < ApplicationController
     render template: "products/aliexpress"
   end
 
+  def product_params
+    params.require(:product).permit :name, :category_id, 
+    :price, :description, :quantity , :picture
+  end
 end

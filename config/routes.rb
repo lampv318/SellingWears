@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
   get "/aliexpress", to: "products#aliexpress"
+  post  "/aliexpress", to: "products#create"
   resources :products
   resources :users do
     member do

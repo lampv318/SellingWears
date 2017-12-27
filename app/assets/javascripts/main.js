@@ -3,6 +3,7 @@
 $(function(){
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	const apiUrl = "https://product-api-hungdo.herokuapp.com/"; // site that doesn’t send Access-Control-*
+	var currentProduct={};
 
 	$('.text-ajax').click(function(){
 		console.log("obj");
@@ -73,6 +74,8 @@ $(function(){
 		$.ajax({
 			type: "POST",
 			url: proxyurl+apiUrl+"search",
+			dataType: "xml/html/script/json", // expected format for response
+			contentType: "application/json",
 			data: {
 				keyword: keyword
 			},
@@ -115,11 +118,12 @@ $(function(){
 
 	function fillDataProducts(products) {
 		console.log(products);
+		var productItemHtml = $(".product-item-html").html();
 		var regex = /[+-]?\d+(\.\d+)?/g;
-		var productItemHtml = $(".get-product-api .-col-left .product-list").html();
+		
 		$(".get-product-api .-col-left .product-list").html("");
 		var productsList = $(".get-product-api .-col-left .product-list");
-
+		
 		for (var i = 0; i < products.length; i++) {
 			var productItemHtmlTemp = productItemHtml;
 			var product = products[i];
@@ -172,12 +176,46 @@ $(function(){
 
 	function fillDataProduct(product) {
 		console.log(product);
+		currentProduct = product;
 		if (product.gallery.length) {
 			$(".product-detail img").attr("src", product.gallery[0].src);
 		}
 		$(".product-detail .name").html(product.name);
 		$(".product-detail .price").html(product.price);
 		$(".product-detail .description").html(product.description);
+	}
+
+	$(".get-product-api .btn-save").click(function(){
+		currentProduct.category_id = Math.floor(Math.random()*4 + 1);
+		currentProduct.img_url = currentProduct.gallery[0].src;
+		currentProduct.quantity = 100;
+		console.log(currentProduct);
+
+		$.ajax({
+			type: "POST",
+			url: "/admin/product",
+			data: "product[name]=" + currentProduct.name + 
+			"&product[category_id]=" + currentProduct.category_id +
+			"&product[price]=" + currentProduct.price +
+			"&product[description]=" + currentProduct.description +
+			"&product[quantity]=" + currentProduct.quantity +
+			"&product[picture]=" + currentProduct.img_url,
+			beforeSend: function() {
+				showLoading();
+			},
+			success: function(data) {
+				hideLoading();
+				successCreateProduct(data);
+			},
+			error: function(xhr, text) {
+				hideLoading();
+				showError(xhr);
+			}
+		});
+	})
+	function successCreateProduct(data) {
+		showSuccess('Created!');
+		// console.log(data);
 	}
 
 	$('#alert-success .close, #alert-error .close').click(function(){
