@@ -44,3 +44,5 @@ Open terminal 2
 ```
 	bundle exec rake browser_sync:start
 ```
+
+google-chrome --disable-web-security 

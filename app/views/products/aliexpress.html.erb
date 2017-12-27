@@ -1,33 +1,61 @@
-<h1>AliExpress</h1>
-
-<% unless logged_in? && @current_user.is_admin %>      
-  <h1>ADMIN</h1>
-<% end %>
-
+<% if logged_in? && @current_user.is_admin %>      
+<br>
+<h3 class="text-center">AliExpress</h3>
+<hr>
 <div class="row get-product-api">
-	<div class="col-md-6">
-		<div class="row">
-			<div class="col-xs-2 image-block">
-				<div class="image" style="background-image: url('images/collections/1.jpg');">
-					
-				</div> 
-			</div>
-			<div class="col-xs-8">
-				<div class="name">
-					Hung
+	
+	<div class="col-md-6 -col-left">
+		<div>
+			<input class="keyword" type="text" name="" placeholder="Search Keyword" style="width: 70%; margin-left: 5%"><button class="btn btn-primary btn-search-products" style="line-height: 1.5;">Search</button>
+		</div>
+		<div class="product-list">
+			<div class="row product-item">
+				<div class="col-xs-1 image-block">
+					<div class="image" style="background-repeat: none; background-position: center;background-size: cover">
+					</div> 
 				</div>
-				<div class="description">
-					DoHungHung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung Hung 
+				<div class="col-xs-7 text-left">
+					<div class="name">
+						<div>Name: <span class="name-value">name_</span></div>
+					</div>
+					<div class="info">
+						<div>Price: <span class="price-value">price_</span></div>
+					</div>
 				</div>
-			</div>
-			<div class="col-xs-2 action">
-				<button>Detail</button>
-				<button>Save</button>
+				<div class="col-xs-3 action">
+					<button class="btn btn-primary btn-detail" data-url="product_url_" data-name="name_" data-price="price_">Detail</button>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="col-md-6">
-		sdf
+	<div class="col-md-6 -col-right">
+		<div>
+			<input class="link-product" type="text" name="" placeholder="Link Product" style="width: 70%; margin-left: 5%"><button class="btn btn-primary btn-get-product" style="line-height: 1.5;">Get Product</button>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+			<div class="col-xs-6">
+				<img class="img" src="">
+			</div>
+			<div class="col-xs-6">
+				<div><b>Name:</b> <span class="name"></span></div> <br>
+				<div><b>Price:</b> <span class="price"></span></div><br>
+				<b>Description</b>
+				<div class="description">
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+		</div>
+		<br>
+		<div class="text-center">
+			<button class="btn btn-info btn-lg btn-save">SAVE</button>
+		</div>
+		</div>
 	</div>
 </div>
+
+<% end %>

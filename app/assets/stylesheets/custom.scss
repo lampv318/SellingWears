@@ -37,6 +37,11 @@ $mobile-port:         "screen and (max-width: 360px)";
 }
 
 .get-product-api {
+  .product-list, .product-detail {
+    height: 90vh;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
   .row {
     margin: 0px;
   }
@@ -52,7 +57,14 @@ $mobile-port:         "screen and (max-width: 360px)";
     }
   }
   .action {
-    display: block-inline;
+    display: flex;
+    .btn {
+      background: #fff;
+      color: #231a1a;
+    }
+  }
+  .product-item {
+    padding-top: 10px;
   }
   
 }
